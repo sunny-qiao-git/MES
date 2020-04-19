@@ -62,7 +62,7 @@
                     Width="1000px" KeyField="GUID" HAlign="center" OnClick="editAction">
                     <Columns>
 
-                       <%-- <asp:TemplateField HeaderText="操作" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="150">
+                       <%-- <asp:TemplateField HeaderText="操作"  ItemStyle-HorizontalAlign="Center" ItemStyle-Width="150">
                             <ItemTemplate>
                                 <asp:EButton runat="server" ID="btnEdit" Text="编辑" IsClient="true" Icon="edit" OnClientClick="editAction(this);" />
                                 <asp:EButton runat="server" Icon="Delete" ID="btnDelete" Text="删除" IsClient="true" OnClientClick="return deleteAction(this);" CommandArgument='<%#Eval("GUID")%>' OnClick="btnDelete_Click" />
