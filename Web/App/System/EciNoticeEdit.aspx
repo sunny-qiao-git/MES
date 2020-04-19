@@ -46,29 +46,36 @@
                     <tr>
                         <th style="width: 60px; min-width: 60px;"></th>
                         <th></th>
+                        <th></th>
                     </tr>
                     <tr>
                         <td>标题</td>
                         <td>
-                            <asp:ETextBox runat="server" ID="txtTitle" DataField="TITLE" NotNull="true" Width="100%"></asp:ETextBox></td>
-
-
+                            <asp:ETextBox runat="server" ID="txtTitle" DataField="TITLE" NotNull="true" Width="124%"></asp:ETextBox>
+                        </td>
+                        <th></th>
                     </tr>
                     <tr>
                         <td>有效期</td>
                         <td>
-                            <asp:ETextBox runat="server" ID="txtEffectStartDate" DataField="EFFECT_START_DATE" IsDate="true" Width="200"></asp:ETextBox>&nbsp;-&nbsp;<asp:ETextBox runat="server" ID="txtEffectEndDate" DataField="EFFECT_END_DATE" IsDate="true" Width="200"></asp:ETextBox>&nbsp;状态
+                            <asp:ETextBox runat="server" ID="txtEffectStartDate" DataField="EFFECT_START_DATE" IsDate="true" Width="120"></asp:ETextBox>&nbsp;-&nbsp;
+                            <asp:ETextBox runat="server" ID="txtEffectEndDate" DataField="EFFECT_END_DATE" IsDate="true" Width="120"></asp:ETextBox>
+                         </td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通知目标类型&nbsp;&nbsp;
+                            <asp:EDropDownList runat="server" ID="cboType" DataField="TARGET_TYPE" Width="80">   
+                            </asp:EDropDownList>
+                             &nbsp;&nbsp;&nbsp;状态
+                            &nbsp;&nbsp;&nbsp;
                             <asp:EDropDownList runat="server" ID="cboStatus" DataField="STATUS" Width="80" Enabled="false">
                                 <asp:ListItem Value="NEW">新建</asp:ListItem>
                                 <asp:ListItem Value="PUBLISH">发布</asp:ListItem>
                                 <asp:ListItem Value="STOP">取消</asp:ListItem>
-                            </asp:EDropDownList></td>
-
-
+                            </asp:EDropDownList>
+                        </td>
                     </tr>
 
                     <tr>
-                        <td colspan="2" style="white-space: normal; padding-top: 10px;">
+                        <td colspan="6" style="white-space: normal; padding-top: 10px;">
                             <textarea id="txtBody" name="txtBody" cols="40" rows="10" runat="server" style="height: 300px;">  
                          
                         </textarea>

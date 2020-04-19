@@ -65,7 +65,6 @@
                             <asp:ETextBox runat="server" ID="txtTitle" DataField="TITLE" Query="A.TITLE|string|like" Width="85%"></asp:ETextBox></td>
                         <td class="lbl">状态</td>
                         <td>
-
                             <asp:EDropDownList runat="server" ID="ddlStatus" DataField="STATUS" Query="A.STATUS|string|=" Width="85%">
                                 <asp:ListItem Value=""></asp:ListItem>
                                 <asp:ListItem Value="NEW">新建</asp:ListItem>
@@ -76,6 +75,15 @@
                         </td>
 
 
+                    </tr>
+                    <tr>
+                        <td class="lbl">通知目标类型</td>
+                        <td>
+                            <asp:EDropDownList runat="server" ID="cboType" DataField="TARGET_TYPE" Query="A.TARGET_TYPE|string|=" Width="85%">
+                           
+                            </asp:EDropDownList>
+
+                        </td>
                     </tr>
 
                     <tr>
@@ -120,6 +128,7 @@
                         <asp:BoundField DataField="TITLE" HeaderText="标题" SortExpression="TITLE" ItemStyle-Width="400"></asp:BoundField>
                         <asp:BoundField DataField="TYPE" HeaderText="类型" SortExpression="TYPE" ItemStyle-Width=""></asp:BoundField>
                         <asp:BoundField DataField="STATUS" HeaderText="状态" SortExpression="STATUS" ItemStyle-Width=""></asp:BoundField>
+                        <asp:BoundField DataField="TARGET_TYPE_NAME" HeaderText="通知目标类型" SortExpression="STATUS" ItemStyle-Width=""></asp:BoundField>
                         <asp:BoundField DataField="CREATE_DATE" HeaderText="创建日期" SortExpression="CREATE_DATE" ItemStyle-Width="130" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}"></asp:BoundField>
                         <asp:BoundField DataField="CREATE_USER" HeaderText="创建人" SortExpression="CREATE_USER" ItemStyle-Width="80"></asp:BoundField>
 

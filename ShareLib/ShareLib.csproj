@@ -43,45 +43,48 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="开发平台\ECI.Customer.Service.dll" />
     <Content Include="开发平台\ECI.Export.Core.dll" />
     <Content Include="开发平台\ECI.SOA.Client.dll" />
+    <Content Include="开发平台\ECI.SOA.Client.pdb" />
     <Content Include="开发平台\ECI.SOA.Service.dll" />
+    <Content Include="开发平台\ECI.SOA.Service.pdb" />
     <Content Include="开发平台\ECI.Speed.BLL.dll" />
     <Content Include="开发平台\ECI.Speed.BLL.pdb" />
     <Content Include="开发平台\ECI.Speed.Chart.dll" />
+    <Content Include="开发平台\ECI.Speed.Chart.pdb" />
     <Content Include="开发平台\ECI.Speed.Core.dll" />
     <Content Include="开发平台\ECI.Speed.Core.pdb" />
     <Content Include="开发平台\ECI.Speed.Core.xml" />
     <Content Include="开发平台\ECI.Speed.Mobile.dll" />
     <Content Include="开发平台\ECI.Speed.SO.dll" />
     <Content Include="开发平台\ECI.Speed.SO.pdb" />
+    <Content Include="开发平台\ECI.Speed.Version.dll" />
+    <Content Include="开发平台\ECI.Speed.Version.pdb" />
     <Content Include="开发平台\ECI.Speed.Web.dll" />
     <Content Include="开发平台\ECI.Speed.Web.pdb" />
     <Content Include="开发平台\ECI.Speed.Web.xml" />
     <Content Include="开发平台\ECI.SSO.BizEntity.dll" />
+    <Content Include="开发平台\ECI.SSO.Client.dll" />
     <Content Include="开发平台\ECI.SSO.Common.dll" />
     <Content Include="开发平台\ECI.SSO.Framework.dll" />
+    <Content Include="开发平台\ECI.SSO.Library.dll" />
     <Content Include="开发平台\ECI.SSO.OrganizationManagement.dll" />
     <Content Include="开发平台\ECI.SSO.SecurityManagement.dll" />
     <Content Include="开发平台\ECI.SSO.StructureManagement.dll" />
     <Content Include="开发平台\ECI.SSO.SystemManagement.dll" />
     <Content Include="开发平台\ECI.UEditor.dll" />
-    <Content Include="开发平台\ECI.SSO.Client.dll" />
     <Content Include="开发平台\ECI.Ulit.Crypto.dll" />
     <Content Include="开发平台\ECI.Ulit.Notice.dll" />
     <Content Include="开发平台\ECI.Web.dll" />
-    <Content Include="权限平台\ECI.SSO.BizEntity.dll" />
     <Content Include="权限平台\ECI.SSO.BLL.dll" />
-    <Content Include="权限平台\ECI.SSO.Common.dll" />
     <Content Include="权限平台\ECI.SSO.DAL.dll" />
     <Content Include="权限平台\ECI.SSO.Entity.dll" />
-    <Content Include="权限平台\ECI.SSO.Framework.dll" />
-    <Content Include="权限平台\ECI.SSO.Library.dll" />
     <Content Include="权限平台\ECI.SSO.ServiceList.dll" />
     <Content Include="权限平台\ECI.SSO.SO.dll" />
     <Content Include="权限平台\ECI.SSO.UI.dll" />
+    <Content Include="权限平台\ECI.SSO.Version.dll" />
     <Content Include="权限平台\ECI.SSO.Web.dll" />
+    <Content Include="权限平台\ECI.SSO.WebAPI.dll" />
     <Content Include="第三方\DocX.dll" />
     <Content Include="第三方\ICSharpCode.SharpZipLib.dll" />
     <Content Include="第三方\log4net.dll" />
@@ -96,8 +99,8 @@
     <Content Include="第三方\NPOI.OOXML.dll" />
     <Content Include="第三方\NPOI.OpenXml4Net.dll" />
     <Content Include="第三方\NPOI.OpenXmlFormats.dll" />
-    <Content Include="第三方\oracle.dataaccess.dll" />
-    <Content Include="第三方\Oracle.ManagedDataAccess.dll" />
+    <Content Include="第三方\Oracle.DataAccess.dll" />
+    <Content Include="第三方\QuickMark.dll" />
     <Content Include="第三方\ServiceStack.Client.dll" />
     <Content Include="第三方\ServiceStack.Common.dll" />
     <Content Include="第三方\ServiceStack.dll" />
@@ -106,6 +109,7 @@
     <Content Include="第三方\ServiceStack.Text.dll" />
     <Content Include="第三方\SharpCompress.dll" />
     <Content Include="第三方\SharpZipLib.dll" />
+    <Content Include="第三方\ThoughtWorks.QRCode.dll" />
     <Content Include="第三方\Wilco.SyntaxHighlighter.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

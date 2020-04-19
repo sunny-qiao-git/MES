@@ -13,6 +13,46 @@ function load() {
     $("#form1").html(html);
 }
 
+var helpClick = false;
+
+function reset() {
+    helpClick = false;
+}
+
+
+function openEx(url, options) {
+    var options = $.extend({ width: "auto", height: "auto", target: "_blank", post: false, data: "" }, options);
+
+    var t, l;
+    var h = options.height;
+    var w = options.width;
+    var target = options.target;
+
+    if (h == "auto") h = window.screen.availHeight - 150;
+    if (w == "auto") w = window.screen.availWidth - 100;
+
+    if (options.full) {
+        h = window.screen.availHeight - 70;
+        w = window.screen.availWidth - 10;
+        t = 0;
+        l = 0;
+    }
+    else {
+        t = (window.screen.availHeight - h) / 2;
+        l = (window.screen.availWidth - w) / 2;
+    }
+
+    var f = "height=" + h + ", width=" + w + ", top=" + t + " , left=" + l + ",location=no,toolbar=no, menubar=no, scrollbars=yes, resizable=yes, status=no";
+
+    if (url == undefined || url == "") {
+        msg.alert("打开页面地址不可以为空");
+    }
+    else {
+        window.open(url, "help", f);
+    }
+}
+
+
 $(function () {
 
     fitH();
@@ -23,7 +63,35 @@ $(function () {
     showPageNav = showPageNav == "true"
     var pageNav;
 
+
+    $(".menu-help").click(function (e) {
+
+
+        var e = window.event || e;
+        if (e.preventDefault) {
+            e.preventDefault();
+        }
+
+        var url = $(this).attr("help-url");
+
+        if (url) {
+            window.openEx(url);
+            helpClick = true;
+            setTimeout(reset, 200);
+        }
+
+
+
+    })
+
+
+
     $a.click(function () {
+
+        if (helpClick) {
+            return;
+        }
+
         var $this = $(this);
         var function_name = $this.attr("function_name");
         var function_id = $this.attr("function_id");
@@ -44,7 +112,7 @@ $(function () {
             if (url.indexOf("http") < 0 && url.indexOf("../") < 0) {
                 url = "../../" + url;
             }
- 
+
             window.parent.mainOpenUrl(url);
         }
         else {
@@ -69,6 +137,22 @@ $(function () {
         return false;
     });
 
+    $row = $(".tree-node");
+
+    $row.mouseenter(function () {
+
+        $(this).find(".menu-help").show();
+    })
+
+
+    $row.mouseleave(function () {
+        $(this).find(".menu-help").hide();
+    })
+
+
+
+
+
     $("#container").click(function () {
 
         if (event.ctrlKey) {
@@ -76,6 +160,9 @@ $(function () {
             parent.eci.textView(logValue, { width: 800 });
         }
     })
+
+
+
 
 });
 
@@ -122,7 +209,7 @@ function menuLayout() {
 
     var $header = $(".panel-header");
 
-     var padding= $(".panel-header").css("padding-top").replace("px","")*2;
+    var padding = $(".panel-header").css("padding-top").replace("px", "") * 2;
 
     if ($header.length > 0) {
 
@@ -157,7 +244,7 @@ $(function () {
     var $header = $(".panel-header");
 
     if ($header.length == 0) {
- 
+
         var winHeight = $(window).height();
 
         var containerHeight = winHeight;
@@ -208,15 +295,15 @@ $(function () {
         $header[0].click();
 
         $(".tree-node").click(function () {
- 
+
             var level = $(this).attr("level");
-           
+
             var my = $(this);
             var body = my.parent().find("ul");
             if (body.length == 0) { return; }
 
             var isHidden = body.is(":hidden");
-  
+
             var brother = my.parent().parent().find(".tree-node[level=" + level + "]");
 
             //alert(brother.length)
@@ -263,7 +350,7 @@ $(function () {
 
 
         $(".tree-node").find("div").click(function () {
-             
+
             if (currentNode) {
                 $(currentNode).removeClass("current");
             }

@@ -163,6 +163,8 @@ function epanelToggle(id) {
 
 function postback(eventTarget, eventArgument, tag) {
 
+    debugger;
+
     if (!eventArgument) { eventArgument = ""; }
 
     var needLoading = true;
@@ -1250,33 +1252,6 @@ $.eci.lazyurl = function (tabId, url) {
 $.eci.loadurl = function (tabId, url) {
     $("#" + tabId + "_frame").attr("src", url);
 }
- 
-$.eci.showTab = function (tabId, url) {
-    if (url) {
-        eci.loadurl(tabId, url);
-    }
-
-    var $this = $("#" + tabId);
-    var $ecitab = $this.parents(".eci-tab");
-    var id = $ecitab.attr("id");
-
-    $this.parent().find("li").removeClass("tabs-selected")
-
-    $this.addClass("tabs-selected");
-
-    var $panels = $ecitab.find(".tabs-panels");
-
-    $panels.find(".panel").hide();
-
-    var toIndex = $this.parent().find("li").index(this);
-
-    var $panel = $panels.find(".panel").eq(toIndex)
-
-    $panel.show()
-
-    $("#" + id + "_ActiveTabIndex").val(toIndex);
-}
-
 
 $.eci.hasChanged = function () {
     return $("#HasChanged").val() == "true";
@@ -1546,15 +1521,7 @@ $.eci.textpopCallback=function(value)
 {
     eci.$textpop.val(value);
 }
-
-$.eci.openPdf = function (pdfUrl) {
-    if (eci.isChrome) {
-        window.open(pdfUrl);
-    }
-    else {
-        window.open($.eci.webPath + "/Plugin/pdf/web/viewer.html?file=" + pdfUrl);
-    }
-}
+ 
  
 $.eci.webPath = $("head").attr("VirtualPath");
 if ($.eci.webPath == undefined) { $.eci.webPath = "../.."; }
@@ -4325,7 +4292,10 @@ $(function () {
             //        }
             //    }
             //}
- 
+
+
+
+
         }
         catch (e) { }
 
@@ -5163,3 +5133,6 @@ $(function () {
 
 
 })
+
+
+
