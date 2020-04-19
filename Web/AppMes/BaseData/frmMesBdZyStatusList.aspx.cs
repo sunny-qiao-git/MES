@@ -55,5 +55,7 @@ public partial class AppMes_BaseData_frmMesBdZyStatusList : QueryPage
             EAlert.Tip("删除执行成功");
 
             this.Search();
+
+        //EAlert.Tip("删除执行成功");
     }
 }
