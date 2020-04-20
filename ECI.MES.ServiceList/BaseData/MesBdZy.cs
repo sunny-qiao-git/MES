@@ -30,5 +30,9 @@ namespace ECI.MES.ServiceList
         /// XXX:获取树
         /// </summary>
         public const string MesBdZyGetLower = prex + "MesBdZyGetLower";
+        /// <summary>
+        /// XXX:导入
+        /// </summary>
+        public const string MesBdZyImport = prex + "MesBdZyImport";
     }
 }

@@ -125,6 +125,7 @@
     <Compile Include="BaseData\MesBdZyBLL.cs" />
     <Compile Include="BaseData\MesBdZyDocBLL.cs" />
     <Compile Include="BaseData\MesBdZyStatusBLL.cs" />
+    <Compile Include="Import\ImportBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -123,6 +123,7 @@
     <Compile Include="BaseData\MesBdZyDAL.cs" />
     <Compile Include="BaseData\MesBdZyDocDAL.cs" />
     <Compile Include="BaseData\MesBdZyStatusDAL.cs" />
+    <Compile Include="Import\ImportDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

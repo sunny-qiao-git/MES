@@ -492,6 +492,12 @@
         function download() {
             window.open("../ExcelTemplate/职员.xls", "data", "data");
         }
+
+ function ZyUpload() {
+            var guid = eci.guid();
+            var url = "frmImpUpload.aspx" + "?Type=ZY&Guid=" + guid;
+            eci.open(url);
+        }
     </script>
 </head>
 <body>
@@ -515,7 +521,7 @@
                                 <asp:EButton runat="server" Text="保存" ID="btnSave" Icon="save" IsClient="true" OnClientClick="save()" />
                                 <%--<asp:EButton runat="server" Text="删除" ID="btnDeleteIt" Icon="delete" IsClient="true" OnClientClick="deleteIt()" />--%>
                                 <asp:EButton runat="server" Text="下载模板" ID="btnDown" Icon="excel" IsClient="true" OnClientClick="download()" />
-                                <asp:EButton runat="server" Text="导入" ID="btnImp" Icon="excel" IsClient="true" OnClientClick="import()" />
+                                <asp:EButton runat="server" Text="导入" ID="btnImp" Icon="excel" IsClient="true" OnClientClick="ZyUpload()" />
                             </div>
                         </td>
                     </tr>

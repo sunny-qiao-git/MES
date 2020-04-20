@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\ECI_FILE_BIZ_TYPE.cs" />
+    <Compile Include="Entity\ECI_FILE_INFO.cs" />
     <Compile Include="Entity\MES_BD_BC.cs" />
     <Compile Include="Entity\MES_BD_BGWJLB.cs" />
     <Compile Include="Entity\MES_BD_BZ.cs" />

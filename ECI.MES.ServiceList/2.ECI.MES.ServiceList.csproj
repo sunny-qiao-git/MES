@@ -120,9 +120,11 @@
     <Compile Include="BaseData\MesBdZy.cs" />
     <Compile Include="BaseData\MesBdZyDoc.cs" />
     <Compile Include="BaseData\MesBdZyStatus.cs" />
+    <Compile Include="Import\Import.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BaseData\MESService.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

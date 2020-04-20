@@ -117,6 +117,7 @@
     <Compile Include="BaseData\MesBdZyDocVAL.cs" />
     <Compile Include="BaseData\MesBdZyStatusVAL.cs" />
     <Compile Include="BaseData\MesBdZyVAL.cs" />
+    <Compile Include="Import\ImportVAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

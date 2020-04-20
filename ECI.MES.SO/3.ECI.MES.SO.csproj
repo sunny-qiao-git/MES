@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Import\ImportSearch.cs" />
     <Compile Include="MesBdBc\MesBdBcDelete.cs" />
     <Compile Include="MesBdBc\MesBdBcLoad.cs" />
     <Compile Include="MesBdBc\MesBdBcSave.cs" />
@@ -348,6 +349,7 @@
     <Compile Include="MesBdZyStatus\MesBdZyStatusSave.cs" />
     <Compile Include="MesBdZyStatus\MesBdZyStatusSearch.cs" />
     <Compile Include="MesBdZy\MesBdZyDelete.cs" />
+    <Compile Include="MesBdZy\MesBdZyImport.cs" />
     <Compile Include="MesBdZy\MesBdZyLoad.cs" />
     <Compile Include="MesBdZy\MesBdZySave.cs" />
     <Compile Include="MesBdZy\MesBdZySearch.cs" />
