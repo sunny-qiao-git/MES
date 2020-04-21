@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[ECI_DEV_TABLE] (
+    [GUID]       VARCHAR (36) NULL,
+    [CODE]       VARCHAR (50) NULL,
+    [TABLE_NAME] VARCHAR (50) NULL
+);
+

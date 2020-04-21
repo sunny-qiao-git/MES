@@ -1,0 +1,21 @@
+﻿CREATE TABLE [dbo].[SSO_EMPLOYEE] (
+    [EMPLOYEEID]      VARCHAR (36)  NOT NULL,
+    [NAME]            VARCHAR (255) NOT NULL,
+    [CODE]            VARCHAR (255) NOT NULL,
+    [EMAIL]           VARCHAR (100) NULL,
+    [MOBILE]          VARCHAR (100) NULL,
+    [TELEPHONENUMBER] VARCHAR (100) NULL,
+    [FAX]             VARCHAR (100) NULL,
+    [SEX]             INT           NULL,
+    [POST]            VARCHAR (255) NULL,
+    [DESCRIPTION]     VARCHAR (255) NULL,
+    [STATUS]          INT           NOT NULL,
+    [SEQUENCE]        INT           NULL,
+    [PARENTID]        VARCHAR (36)  NULL,
+    [CREATEUSER]      VARCHAR (36)  NULL,
+    [CREATETIME]      DATETIME      NULL,
+    [LASTMODIFYUSER]  VARCHAR (36)  NULL,
+    [LASTMODIFYTIME]  DATETIME      NULL,
+    CONSTRAINT [PK_SSO_EMPLOYEE] PRIMARY KEY CLUSTERED ([EMPLOYEEID] ASC)
+);
+

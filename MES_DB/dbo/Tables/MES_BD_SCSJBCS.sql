@@ -1,0 +1,37 @@
+﻿CREATE TABLE [dbo].[MES_BD_SCSJBCS] (
+    [GUID]             VARCHAR (36)  NOT NULL,
+    [BH]               VARCHAR (10)  NULL,
+    [NAME]             VARCHAR (20)  NULL,
+    [JSFS]             VARCHAR (20)  NULL,
+    [REMARK]           VARCHAR (300) NULL,
+    [CREATE_USER]      VARCHAR (20)  NULL,
+    [CREATE_USER_NAME] VARCHAR (50)  NULL,
+    [CREATE_DATE]      DATETIME      NULL,
+    [UPDATE_USER]      VARCHAR (20)  NULL,
+    [UPDATE_USER_NAME] VARCHAR (50)  NULL,
+    [UPDATE_DATE]      DATETIME      NULL,
+    [COMPANY_CODE]     VARCHAR (50)  NULL,
+    [COMPANY_NAME]     VARCHAR (200) NULL,
+    CONSTRAINT [PK_MES_BD_SCSJBCS] PRIMARY KEY CLUSTERED ([GUID] ASC)
+);
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = '生产数据表参数设置', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'MES_BD_SCSJBCS';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = '生产数据参数编号', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'MES_BD_SCSJBCS', @level2type = N'COLUMN', @level2name = N'BH';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = '生产数据参数名', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'MES_BD_SCSJBCS', @level2type = N'COLUMN', @level2name = N'NAME';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = '生产数据计算方式', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'MES_BD_SCSJBCS', @level2type = N'COLUMN', @level2name = N'JSFS';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = '备注', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'MES_BD_SCSJBCS', @level2type = N'COLUMN', @level2name = N'REMARK';
+

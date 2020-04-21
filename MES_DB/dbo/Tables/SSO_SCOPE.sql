@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[SSO_SCOPE] (
+    [SRCID]      CHAR (36)    NULL,
+    [SRCTYPE]    CHAR (1)     NULL,
+    [DESTID]     CHAR (36)    NULL,
+    [DESTTYPE]   CHAR (1)     NULL,
+    [CREATEUSER] VARCHAR (36) NULL,
+    [CREATETIME] DATETIME     NULL
+);
+

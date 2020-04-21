@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[SSO_LOG] (
+    [LOGID]      NVARCHAR (36)   NULL,
+    [USERID]     NVARCHAR (32)   NULL,
+    [TRUENAME]   NVARCHAR (50)   NULL,
+    [OPERID]     NVARCHAR (50)   NULL,
+    [OPERNAME]   NVARCHAR (50)   NULL,
+    [CREATETIME] DATETIME        NULL,
+    [DATA]       NVARCHAR (4000) NULL
+);
+

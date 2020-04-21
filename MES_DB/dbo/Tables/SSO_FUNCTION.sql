@@ -1,0 +1,22 @@
+﻿CREATE TABLE [dbo].[SSO_FUNCTION] (
+    [FUNCTIONID]      NVARCHAR (36)   NOT NULL,
+    [NAME]            NVARCHAR (255)  NOT NULL,
+    [CODE]            NVARCHAR (255)  NOT NULL,
+    [TYPE]            INT             NULL,
+    [URL]             NVARCHAR (255)  NULL,
+    [SEQUENCE]        INT             NULL,
+    [SHOWINMENU]      INT             NULL,
+    [DESCRIPTION]     NVARCHAR (255)  NULL,
+    [IMAGEFILE]       NVARCHAR (50)   NULL,
+    [PARENTID]        NVARCHAR (36)   NULL,
+    [CREATEUSER]      NVARCHAR (36)   NULL,
+    [CREATETIME]      DATETIME        NULL,
+    [LASTMODIFYUSER]  NVARCHAR (36)   NULL,
+    [LASTMODIFYTIME]  DATETIME        NULL,
+    [NEEDSENDMESSAGE] NVARCHAR (30)   NULL,
+    [NEEDCHARGE]      NVARCHAR (30)   NULL,
+    [FCODE]           NVARCHAR (2000) NULL,
+    [FNAME]           NVARCHAR (2000) NULL,
+    CONSTRAINT [PK_SSO_FUNCTION] PRIMARY KEY CLUSTERED ([FUNCTIONID] ASC)
+);
+

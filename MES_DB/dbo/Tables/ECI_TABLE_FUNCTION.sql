@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[ECI_TABLE_FUNCTION] (
+    [GUID]              VARCHAR (200)  NOT NULL,
+    [CREATE_DATE]       DATETIME       NULL,
+    [FUNCTION_NAME]     VARCHAR (400)  NULL,
+    [SEQ]               INT            NULL,
+    [EXTEND_TYPE]       VARCHAR (200)  NULL,
+    [GRID_LINK_URL]     VARCHAR (2000) NULL,
+    [JS_SCRIPT]         VARCHAR (2000) NULL,
+    [SHOW_MODE]         VARCHAR (40)   NULL,
+    [CONTROL_ID]        VARCHAR (200)  NULL,
+    [HOT_KEY]           VARCHAR (1)    NULL,
+    [WIDTH]             VARCHAR (200)  NULL,
+    [CSS]               VARCHAR (200)  NULL,
+    [AUTHORITY_ID]      VARCHAR (40)   NULL,
+    [SHOW_POSITION]     VARCHAR (200)  NULL,
+    [STATUS]            VARCHAR (1)    NULL,
+    [TABLE_GUID]        VARCHAR (100)  NOT NULL,
+    [MEMO]              VARCHAR (4000) NULL,
+    [ICON]              VARCHAR (200)  NULL,
+    [FUNCTION_DATA]     VARCHAR (20)   NULL,
+    [WCF_SERVICE_DATA]  VARCHAR (40)   NULL,
+    [CONTROLLER_ACTION] VARCHAR (200)  NULL,
+    [PROC_NAME]         VARCHAR (200)  NULL,
+    CONSTRAINT [PK_ECI_TABLE_FUNCTION] PRIMARY KEY CLUSTERED ([GUID] ASC)
+);
+

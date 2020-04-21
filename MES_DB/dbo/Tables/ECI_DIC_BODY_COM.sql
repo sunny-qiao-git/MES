@@ -1,0 +1,22 @@
+﻿CREATE TABLE [dbo].[ECI_DIC_BODY_COM] (
+    [BODY_ID]       VARCHAR (50) NOT NULL,
+    [HEAD_CODE]     VARCHAR (50) NOT NULL,
+    [CODE]          VARCHAR (50) NOT NULL,
+    [NAME]          VARCHAR (50) NOT NULL,
+    [NOTNULL]       CHAR (1)     NOT NULL,
+    [IS_SHOW]       CHAR (1)     NOT NULL,
+    [CAN_CONFIG]    CHAR (1)     NOT NULL,
+    [MEMO]          VARCHAR (50) NULL,
+    [SEQ]           FLOAT (53)   NULL,
+    [WIDTH]         FLOAT (53)   NULL,
+    [PHYSICAL_TYPE] VARCHAR (50) NULL,
+    [DB_FIELD]      VARCHAR (50) NULL,
+    [FIELD_LENGTH]  FLOAT (53)   NULL,
+    [CREATE_USER]   VARCHAR (50) NOT NULL,
+    [CREATE_DATE]   DATETIME     NOT NULL,
+    [UPDATE_USER]   VARCHAR (50) NOT NULL,
+    [UPDATE_DATE]   DATETIME     NOT NULL,
+    [HEAD_ID]       VARCHAR (50) NULL,
+    [COMPANY_CODE]  VARCHAR (50) NULL
+);
+

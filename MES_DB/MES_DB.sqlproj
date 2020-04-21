@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>MES_DB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{bc7fe069-3d0a-4d7c-944d-61df30a77965}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>MES_DB</RootNamespace>
+    <AssemblyName>MES_DB</AssemblyName>
+    <ModelCollation>2052,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Chinese_PRC_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\MES_BD_ZY.sql" />
+    <Build Include="dbo\Tables\MES_BD_CPXS_DOC.sql" />
+    <Build Include="dbo\Tables\MES_BD_PROVINCE.sql" />
+    <Build Include="dbo\Tables\MES_BD_SCX_BC.sql" />
+    <Build Include="dbo\Tables\MES_BD_CITY.sql" />
+    <Build Include="dbo\Tables\MES_BD_SCX_BC_TQYJL.sql" />
+    <Build Include="dbo\Tables\MES_BD_WHCD.sql" />
+    <Build Include="dbo\Tables\MES_BD_SCX_BC_GZ_GZ.sql" />
+    <Build Include="dbo\Tables\MES_BD_ZW.sql" />
+    <Build Include="dbo\Tables\MES_BD_SCX_MJ.sql" />
+    <Build Include="dbo\Tables\MES_BD_DEPT.sql" />
+    <Build Include="dbo\Tables\MES_BD_SCX_CPPL.sql" />
+    <Build Include="dbo\Tables\MES_BD_UNIT.sql" />
+    <Build Include="dbo\Tables\MES_BD_SCX_FP.sql" />
+    <Build Include="dbo\Tables\SSO_AGENCY.sql" />
+    <Build Include="dbo\Tables\MES_BD_SB.sql" />
+    <Build Include="dbo\Tables\ECI_DEV_TABLE.sql" />
+    <Build Include="dbo\Tables\MES_BD_SCSJBCS.sql" />
+    <Build Include="dbo\Tables\ECI_DEV_TABLE_ELEMENT.sql" />
+    <Build Include="dbo\Tables\SSO_EMPLOYEE.sql" />
+    <Build Include="dbo\Tables\MES_BD_WLZPL.sql" />
+    <Build Include="dbo\Tables\ECI_TABLE.sql" />
+    <Build Include="dbo\Tables\MES_BD_CC.sql" />
+    <Build Include="dbo\Tables\ECI_TABLE_ELEMENT.sql" />
+    <Build Include="dbo\Tables\SSO_ENTITY2FUNC.sql" />
+    <Build Include="dbo\Tables\MES_BD_WLQZPL.sql" />
+    <Build Include="dbo\Tables\ECI_TABLE_FUNCTION.sql" />
+    <Build Include="dbo\Tables\MES_BD_BGWJLB.sql" />
+    <Build Include="dbo\Tables\ECI_TABLE_GROUP.sql" />
+    <Build Include="dbo\Tables\SSO_ENTITY2FUNC2NODE.sql" />
+    <Build Include="dbo\Tables\ECI_TABLE_TABITEM.sql" />
+    <Build Include="dbo\Tables\MES_BD_CPXS.sql" />
+    <Build Include="dbo\Tables\ECI_DOWNLOAD.sql" />
+    <Build Include="dbo\Tables\SSO_ENTITY2ROLE.sql" />
+    <Build Include="dbo\Tables\MES_BD_CPXS_MJ.sql" />
+    <Build Include="dbo\Tables\ECI_DATA_HELP.sql" />
+    <Build Include="dbo\Tables\SSO_FUNCTION.sql" />
+    <Build Include="dbo\Tables\MES_BD_WLPL.sql" />
+    <Build Include="dbo\Tables\ECI_DATA_GROUP.sql" />
+    <Build Include="dbo\Tables\SSO_LOG.sql" />
+    <Build Include="dbo\Tables\MES_BD_GZ.sql" />
+    <Build Include="dbo\Tables\ECI_DATA_CODE.sql" />
+    <Build Include="dbo\Tables\SSO_NODE.sql" />
+    <Build Include="dbo\Tables\MES_BD_GYS.sql" />
+    <Build Include="dbo\Tables\ECI_BASE.sql" />
+    <Build Include="dbo\Tables\MES_BD_BZ.sql" />
+    <Build Include="dbo\Tables\ECI_SYS_LOG.sql" />
+    <Build Include="dbo\Tables\SSO_NODE_EXT.sql" />
+    <Build Include="dbo\Tables\MES_BD_GYS_GYWL.sql" />
+    <Build Include="dbo\Tables\SSO_ROLE.sql" />
+    <Build Include="dbo\Tables\MES_BD_CS.sql" />
+    <Build Include="dbo\Tables\SSO_SCOPE.sql" />
+    <Build Include="dbo\Tables\MES_BD_MJLXCS.sql" />
+    <Build Include="dbo\Tables\SSO_TOKEN.sql" />
+    <Build Include="dbo\Tables\MES_BD_JYGD.sql" />
+    <Build Include="dbo\Tables\MES_BD_MJ.sql" />
+    <Build Include="dbo\Tables\SSO_USER.sql" />
+    <Build Include="dbo\Tables\MES_BD_FPSZ.sql" />
+    <Build Include="dbo\Tables\MES_BD_MJ_CP.sql" />
+    <Build Include="dbo\Tables\SSO_USER_EXT.sql" />
+    <Build Include="dbo\Tables\MES_BD_FPCY.sql" />
+    <Build Include="dbo\Tables\MES_BD_MJ_DYYX.sql" />
+    <Build Include="dbo\Tables\SSO_USER_ROLE_NODE.sql" />
+    <Build Include="dbo\Tables\BASE_SYS_PARAM.sql" />
+    <Build Include="dbo\Tables\SSO_USER2USERGROUP.sql" />
+    <Build Include="dbo\Tables\MES_BD_MJ_CS.sql" />
+    <Build Include="dbo\Tables\SSO_USERGROUP.sql" />
+    <Build Include="dbo\Tables\MES_BD_MJ_WXBF.sql" />
+    <Build Include="dbo\Tables\MES_BD_KQJ.sql" />
+    <Build Include="dbo\Tables\MES_BD_CJ.sql" />
+    <Build Include="dbo\Tables\MES_BD_WJLB.sql" />
+    <Build Include="dbo\Tables\MES_BD_WL.sql" />
+    <Build Include="dbo\Tables\MES_BD_JZ.sql" />
+    <Build Include="dbo\Tables\MES_BD_ZQ.sql" />
+    <Build Include="dbo\Tables\MES_BD_ZY_IMP.sql" />
+    <Build Include="dbo\Tables\MES_BD_ZJFF.sql" />
+    <Build Include="dbo\Tables\MES_BD_KM.sql" />
+    <Build Include="dbo\Tables\ECI_NO.sql" />
+    <Build Include="dbo\Tables\ECI_FILE_BIZ_TYPE.sql" />
+    <Build Include="dbo\Tables\ECI_NO_HELP.sql" />
+    <Build Include="dbo\Tables\ECI_FILE_INFO.sql" />
+    <Build Include="dbo\Tables\MES_BD_GDZCLB.sql" />
+    <Build Include="dbo\Tables\ECI_FILE_INFO_TEMP.sql" />
+    <Build Include="dbo\Tables\MES_BD_ZY_STATUS_IMP.sql" />
+    <Build Include="dbo\Tables\MES_BD_GDZCZJFS.sql" />
+    <Build Include="dbo\Tables\MES_BD_GDZC.sql" />
+    <Build Include="dbo\Tables\MES_BD_GDZC_DEPT.sql" />
+    <Build Include="dbo\Tables\ECI_REPORT.sql" />
+    <Build Include="dbo\Tables\MES_BD_GDZC_TQYJL.sql" />
+    <Build Include="dbo\Tables\ECI_UI_CONFIG_HEAD.sql" />
+    <Build Include="dbo\Tables\MES_BD_GDZC_FSSB.sql" />
+    <Build Include="dbo\Tables\ECI_UI_CONFIG_ITEM.sql" />
+    <Build Include="dbo\Tables\ECI_DIC_BODY.sql" />
+    <Build Include="dbo\Tables\MES_BD_SBWXBY.sql" />
+    <Build Include="dbo\Tables\MES_BD_SCX.sql" />
+    <Build Include="dbo\Tables\ECI_DIC_BODY_COM.sql" />
+    <Build Include="dbo\Tables\ECI_DIC_HEAD.sql" />
+    <Build Include="dbo\Tables\ECI_DIC_HEAD_COM.sql" />
+    <Build Include="dbo\Tables\MES_BD_DB_ZDB.sql" />
+    <Build Include="dbo\Tables\ECI_COM_PARAM.sql" />
+    <Build Include="dbo\Tables\ECI_COM_PARAM_GROUP.sql" />
+    <Build Include="dbo\Tables\MES_BD_SBDB.sql" />
+    <Build Include="dbo\Tables\ECI_COM_PARAM_INSTANCE.sql" />
+    <Build Include="dbo\Tables\ECI_PARAM.sql" />
+    <Build Include="dbo\Tables\MES_BD_GDZC_ZJFFT.sql" />
+    <Build Include="dbo\Tables\ECI_PARAM_GROUP.sql" />
+    <Build Include="dbo\Tables\ECI_PARAM_INSTANCE.sql" />
+    <Build Include="dbo\Tables\MES_BD_CW.sql" />
+    <Build Include="dbo\Tables\MES_BD_GX.sql" />
+    <Build Include="dbo\Tables\MES_BD_SJKBG.sql" />
+    <Build Include="dbo\Tables\MES_BD_CK.sql" />
+    <Build Include="dbo\Tables\MES_BD_BC.sql" />
+    <Build Include="dbo\Tables\MES_BD_ZY_STATUS.sql" />
+    <Build Include="dbo\Tables\MES_BD_SB_DOC.sql" />
+    <Build Include="dbo\Tables\MES_BD_DB.sql" />
+    <Build Include="dbo\Tables\MES_BD_ZY_DOC.sql" />
+    <Build Include="dbo\Tables\MES_BD_WL_FZ_UNIT.sql" />
+    <Build Include="dbo\Tables\MES_BD_WL_GYS.sql" />
+    <Build Include="dbo\Tables\MES_BD_WL_DOC.sql" />
+    <Build Include="dbo\Tables\MES_BD_CPXS_CC.sql" />
+    <Build Include="dbo\Tables\MES_BD_WLPL_CPXS.sql" />
+    <Build Include="dbo\Tables\MES_BD_WLPL_TJ.sql" />
+    <Build Include="dbo\Tables\MES_BD_GX_GZSZ.sql" />
+    <Build Include="dbo\Tables\MES_BD_FPSZ_DOC.sql" />
+    <Build Include="dbo\Tables\MES_BD_JJLX.sql" />
+    <Build Include="dbo\Tables\MES_BD_MJLX.sql" />
+    <Build Include="dbo\Tables\MES_BD_MJ_DOC.sql" />
+    <Build Include="dbo\Views\V_SSO_USER_ROLE.sql" />
+    <Build Include="dbo\Functions\F_CODE_NAME.sql" />
+    <Build Include="dbo\Functions\F_NAME.sql" />
+    <Build Include="dbo\Functions\GETCOLNAME3.sql" />
+    <Build Include="dbo\Stored Procedures\SP_MES_BD_ZY_IMP.sql" />
+    <Build Include="dbo\Stored Procedures\F_ECI_GET_NO.sql" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,14 @@
+﻿CREATE TABLE [dbo].[ECI_BASE] (
+    [GUID]        VARCHAR (36)   NOT NULL,
+    [CODE]        VARCHAR (40)   NULL,
+    [NAME]        VARCHAR (200)  NULL,
+    [STATUS]      VARCHAR (1)    NULL,
+    [SEQ]         INT            NULL,
+    [MEMO]        VARCHAR (1000) NULL,
+    [CREATE_DATE] DATETIME       NULL,
+    [CREATE_USER] VARCHAR (72)   NULL,
+    [UPDATE_DATE] DATETIME       NULL,
+    [UPDATE_USER] VARCHAR (72)   NULL,
+    CONSTRAINT [PK_ECI_BASE] PRIMARY KEY CLUSTERED ([GUID] ASC)
+);
+

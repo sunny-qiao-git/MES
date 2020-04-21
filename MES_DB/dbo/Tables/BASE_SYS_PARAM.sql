@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[BASE_SYS_PARAM] (
+    [TYPE]        NVARCHAR (50)  NOT NULL,
+    [CODE]        NVARCHAR (100) NOT NULL,
+    [REMARK]      NVARCHAR (100) NULL,
+    [DESCRIPTION] NVARCHAR (100) NULL,
+    [IS_USED]     NVARCHAR (10)  NULL,
+    [TYPE2]       NVARCHAR (50)  NULL,
+    [AUTO_ID]     NVARCHAR (50)  DEFAULT (newid()) NULL,
+    [SYS]         VARCHAR (10)   NULL
+);
+

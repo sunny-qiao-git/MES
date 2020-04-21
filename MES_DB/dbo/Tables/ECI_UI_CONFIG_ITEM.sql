@@ -1,0 +1,12 @@
+﻿CREATE TABLE [dbo].[ECI_UI_CONFIG_ITEM] (
+    [ITEM_ID]     VARCHAR (50) NULL,
+    [HEAD_ID]     VARCHAR (50) NULL,
+    [DATA_FIELD]  VARCHAR (50) NULL,
+    [SORT_FIELD]  VARCHAR (50) NULL,
+    [HEADER_TEXT] VARCHAR (50) NULL,
+    [IS_SHOW]     CHAR (1)     NULL,
+    [SEQ]         FLOAT (53)   NULL,
+    [WIDTH]       FLOAT (53)   NULL,
+    [CONFIG_CODE] VARCHAR (50) NULL
+);
+
