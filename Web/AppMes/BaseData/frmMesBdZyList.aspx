@@ -255,7 +255,6 @@
 
             $("#ascxEdit_txtGh").focus();
 
-            $("#btnDeleteIt").hide();
             $("#btnAdd").hide();
             $("#btnImp").hide();
             $("#btnSave").show();
@@ -265,80 +264,72 @@
         }
 
         function load(id) {
-            if (id == "0") {
-                $(".function-edit").hide();
-            }
-            else {
-                $(".function-edit").show();
+            $(".function-edit").show();
 
-                $("#ascxEdit_txtFLAG").val("Edit");
+            $("#ascxEdit_txtFLAG").val("Edit");
 
-                eci.post("frmMesBdZyData.aspx", "LoadRecord", { id: id }, function (res) {
-                    if (res.success) {//res.全部小写
-                        $("#ascxEdit_txtGUID").val(res.guid);
-                        $("#ascxEdit_txtGh").val(res.gh);
-                        $("#ascxEdit_txtCode").val(res.code);
-                        $("#ascxEdit_txtName").val(res.name);
-                        $("#ascxEdit_cboStatus").val(res.status);
-                        $("#ascxEdit_txtTel").val(res.tel);
-                        $("#ascxEdit_txtIdCard").val(res.id_card);
-                        $("#ascxEdit_txtKhyh").val(res.khyh);
-                        $("#ascxEdit_txtKhm").val(res.khm);
-                        $("#ascxEdit_txtBank").val(res.bank);
-                        $("#ascxEdit_txtWhcd").val(res.whcd);
-                        $("#ascxEdit_txtByxx").val(res.byxx);
-                        $("#ascxEdit_txtByzy").val(res.byzy);
-                        $("#ascxEdit_txtBynf").val(res.bynf);
-                        $("#ascxEdit_txtProvince").val(res.province);
-                        $("#ascxEdit_txtCity").val(res.city);
-                        $("#ascxEdit_txtAddress").val(res.address);
-                        $("#ascxEdit_txtMail").val(res.mail);
-                        $("#ascxEdit_txtRemark").val(res.remark);
-                        $("#ascxEdit_txtJs1").val(res.js1);
-                        $("#ascxEdit_txtJs1Relation").val(res.js1_relation);
-                        $("#ascxEdit_txtJs1Tel").val(res.js1_tel);
-                        $("#ascxEdit_txtJs1Address").val(res.js1_address);
-                        $("#ascxEdit_txtJs2").val(res.js2);
-                        $("#ascxEdit_txtJs2Relation").val(res.js2_relation);
-                        $("#ascxEdit_txtJs2Tel").val(res.js2_tel);
-                        $("#ascxEdit_txtJs2Address").val(res.js2_address);
-                        $("#ascxEdit_txtJs3").val(res.js3);
-                        $("#ascxEdit_txtJs3Relation").val(res.js3_relation);
-                        $("#ascxEdit_txtJs3Tel").val(res.js3_tel);
-                        $("#ascxEdit_txtJs3Address").val(res.js3_address);
-                        $("#ascxEdit_txtJs4").val(res.js4);
-                        $("#ascxEdit_txtJs4Relation").val(res.js4_relation);
-                        $("#ascxEdit_txtJs4Tel").val(res.js4_tel);
-                        $("#ascxEdit_txtJs4Address").val(res.js4_address);
-                        $("#ascxEdit_txtCarNo").val(res.car_no);
-                        $("#ascxEdit_txtCarType").val(res.car_type);
+            eci.post("frmMesBdZyData.aspx", "LoadRecord", { id: id }, function (res) {
+                if (res.success) {//res.全部小写
+                    $("#ascxEdit_txtGUID").val(res.guid);
+                    $("#ascxEdit_txtGh").val(res.gh);
+                    $("#ascxEdit_txtCode").val(res.code);
+                    $("#ascxEdit_txtName").val(res.name);
+                    $("#ascxEdit_cboStatus").val(res.status);
+                    $("#ascxEdit_txtTel").val(res.tel);
+                    $("#ascxEdit_txtIdCard").val(res.id_card);
+                    $("#ascxEdit_txtKhyh").val(res.khyh);
+                    $("#ascxEdit_txtKhm").val(res.khm);
+                    $("#ascxEdit_txtBank").val(res.bank);
+                    $("#ascxEdit_txtWhcd").val(res.whcd);
+                    $("#ascxEdit_txtByxx").val(res.byxx);
+                    $("#ascxEdit_txtByzy").val(res.byzy);
+                    $("#ascxEdit_txtBynf").val(res.bynf);
+                    $("#ascxEdit_txtProvince").val(res.province);
+                    $("#ascxEdit_txtCity").val(res.city);
+                    $("#ascxEdit_txtAddress").val(res.address);
+                    $("#ascxEdit_txtMail").val(res.mail);
+                    $("#ascxEdit_txtRemark").val(res.remark);
+                    $("#ascxEdit_txtJs1").val(res.js1);
+                    $("#ascxEdit_txtJs1Relation").val(res.js1_relation);
+                    $("#ascxEdit_txtJs1Tel").val(res.js1_tel);
+                    $("#ascxEdit_txtJs1Address").val(res.js1_address);
+                    $("#ascxEdit_txtJs2").val(res.js2);
+                    $("#ascxEdit_txtJs2Relation").val(res.js2_relation);
+                    $("#ascxEdit_txtJs2Tel").val(res.js2_tel);
+                    $("#ascxEdit_txtJs2Address").val(res.js2_address);
+                    $("#ascxEdit_txtJs3").val(res.js3);
+                    $("#ascxEdit_txtJs3Relation").val(res.js3_relation);
+                    $("#ascxEdit_txtJs3Tel").val(res.js3_tel);
+                    $("#ascxEdit_txtJs3Address").val(res.js3_address);
+                    $("#ascxEdit_txtJs4").val(res.js4);
+                    $("#ascxEdit_txtJs4Relation").val(res.js4_relation);
+                    $("#ascxEdit_txtJs4Tel").val(res.js4_tel);
+                    $("#ascxEdit_txtJs4Address").val(res.js4_address);
+                    $("#ascxEdit_txtCarNo").val(res.car_no);
+                    $("#ascxEdit_txtCarType").val(res.car_type);
 
-                        $("#btnDeleteIt").show();
-                        $("#btnAdd").show();
+                    $("#btnAdd").show();
 
-                        if (res.status == "Y") {
-                            $("#ascxEdit_txtGh").attr("readonly", "true");
-                            $("#ascxEdit_txtGh").addClass("text-disabled");
-                        }
-                        else {
-                            $("#ascxEdit_txtGh").removeAttr("readonly");
-                            $("#ascxEdit_txtGh").removeClass("text-disabled");
-                        }
-
-                        if (id == "0") {
-                            $("#btnDeleteIt").hide();
-                            $("#btnSave").hide();
-                        }
-                        else {
-                            $("#btnDeleteIt").show();
-                            $("#btnSave").show();
-                        }
+                    if (res.status == "Y") {
+                        $("#ascxEdit_txtGh").attr("readonly", "true");
+                        $("#ascxEdit_txtGh").addClass("text-disabled");
                     }
                     else {
-                        msg.ajax(res);
+                        $("#ascxEdit_txtGh").removeAttr("readonly");
+                        $("#ascxEdit_txtGh").removeClass("text-disabled");
                     }
-                })
-            }
+
+                    if (id == "0") {
+                        $("#btnSave").hide();
+                    }
+                    else {
+                        $("#btnSave").show();
+                    }
+                }
+                else {
+                    msg.ajax(res);
+                }
+            })
         }
         function deleteIt() {
             var editId = $("#ascxEdit_txtGUID").val();
@@ -462,25 +453,13 @@
                         $("#tt").tree("getChildren", parentNode);
                         editNode = parentNode.children[parentNode.children.length - 1];
                         $('#tt').tree('select', editNode.target);
-
-                        //showOpType(id);
                     }
                     else {
                         editNode.text = data.NAME;
                         $("#tt").tree("update", editNode);
                     }
 
-                    $("#btnDeleteIt").show();
                     $("#btnAdd").show();
-
-                    //if (data.STATUS == "Y") {
-                    //    $("#ascxEdit_txtCODE").attr("readonly", "true");
-                    //    $("#ascxEdit_txtCODE").addClass("text-disabled");
-                    //}
-                    //else {
-                    //    $("#ascxEdit_txtCODE").removeAttr("readonly");
-                    //    $("#ascxEdit_txtCODE").removeClass("text-disabled");
-                    //}
 
                     msg.alert("保存成功");
                 }
