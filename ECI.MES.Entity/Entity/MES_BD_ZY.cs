@@ -34,23 +34,13 @@ namespace ECI.MES.Entity
         {
             this.Data = entityBase.Data;
         }
-
-        #region DataMember
-
-        public string PARENTID
-        {
-            get
-            {
-                return this.TextAccess["PARENTID"];
-            }
-            set
-            {
-                this.TextAccess["PARENTID"] = value;
-            }
-        }                             /// <summary>
-                                      ///  
-                                      /// </summary>
-        public string GUID
+ 
+		#region DataMember
+		
+                                                     /// <summary>
+                    ///  
+                    /// </summary>
+                    public string GUID
                     {
                         get
                         {
@@ -664,7 +654,7 @@ namespace ECI.MES.Entity
                         }
                     }
                     /// <summary>
-                    ///  照片1
+                    ///  职员缩略图
                     /// </summary>
                     public string PIC1
                     {
@@ -678,7 +668,7 @@ namespace ECI.MES.Entity
                         }
                     }
                     /// <summary>
-                    ///  照片1路径
+                    ///  职员缩略图路径
                     /// </summary>
                     public string PIC1_PATH
                     {
@@ -831,6 +821,48 @@ namespace ECI.MES.Entity
                             this.TextAccess["COMPANY_NAME"] = value;
                         }
                     }
+                    /// <summary>
+                    ///  
+                    /// </summary>
+                    public string PARENTID
+                    {
+                        get
+                        {
+                            return this.TextAccess["PARENTID"];
+                        }
+                        set
+                        {
+                            this.TextAccess["PARENTID"] = value;
+                        }
+                    }
+                    /// <summary>
+                    ///  职员编号
+                    /// </summary>
+                    public string BH
+                    {
+                        get
+                        {
+                            return this.TextAccess["BH"];
+                        }
+                        set
+                        {
+                            this.TextAccess["BH"] = value;
+                        }
+                    }
+                    /// <summary>
+                    ///  职员内部名
+                    /// </summary>
+                    public string ZYNBM
+                    {
+                        get
+                        {
+                            return this.TextAccess["ZYNBM"];
+                        }
+                        set
+                        {
+                            this.TextAccess["ZYNBM"] = value;
+                        }
+                    }
 
 
 		#endregion
@@ -918,8 +950,7 @@ namespace ECI.MES.Entity
 
         private MES_BD_ZY_COLUMN()
         {
-            base.ListColumn.Add(new ColumnInfo() { Name = "PARENTID", Type = "TEXT" });
-            base.ListColumn.Add(new ColumnInfo() { Name = "GUID", Type = "TEXT"  });
+               base.ListColumn.Add(new ColumnInfo() { Name = "GUID", Type = "TEXT"  });
                base.ListColumn.Add(new ColumnInfo() { Name = "GH", Type = "TEXT"  });
                base.ListColumn.Add(new ColumnInfo() { Name = "CODE", Type = "TEXT"  });
                base.ListColumn.Add(new ColumnInfo() { Name = "NAME", Type = "TEXT"  });
@@ -975,6 +1006,9 @@ namespace ECI.MES.Entity
                base.ListColumn.Add(new ColumnInfo() { Name = "UPDATE_DATE", Type = "DATE"  });
                base.ListColumn.Add(new ColumnInfo() { Name = "COMPANY_CODE", Type = "TEXT"  });
                base.ListColumn.Add(new ColumnInfo() { Name = "COMPANY_NAME", Type = "TEXT"  });
+               base.ListColumn.Add(new ColumnInfo() { Name = "PARENTID", Type = "TEXT"  });
+               base.ListColumn.Add(new ColumnInfo() { Name = "BH", Type = "TEXT"  });
+               base.ListColumn.Add(new ColumnInfo() { Name = "ZYNBM", Type = "TEXT"  });
 
         }
     }
@@ -995,9 +1029,8 @@ namespace ECI.MES.Entity
                 return instance;
             }
         }
-
-        public readonly string PARENTID = "PARENTID";
-        public readonly string GUID = "GUID";
+		
+                    public readonly string GUID = "GUID";
         public readonly string GH = "GH";
         public readonly string CODE = "CODE";
         public readonly string NAME = "NAME";
@@ -1053,6 +1086,9 @@ namespace ECI.MES.Entity
         public readonly string UPDATE_DATE = "UPDATE_DATE";
         public readonly string COMPANY_CODE = "COMPANY_CODE";
         public readonly string COMPANY_NAME = "COMPANY_NAME";
+        public readonly string PARENTID = "PARENTID";
+        public readonly string BH = "BH";
+        public readonly string ZYNBM = "ZYNBM";
 
    }
 }

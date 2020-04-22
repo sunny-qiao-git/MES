@@ -214,6 +214,8 @@
             $("#ascxEdit_txtFLAG").val("Add");
             $("#ascxEdit_txtPARENTID").val(parentId);
 
+            $("#ascxEdit_txtBh").val("");
+            $("#ascxEdit_txtZYNBM").val("");
             $("#ascxEdit_txtGh").val("");
             $("#ascxEdit_txtName").val("");
             $("#ascxEdit_txtCode").val("");
@@ -253,14 +255,13 @@
             $("#ascxEdit_txtPic1Path").val("");
             $("#ascxEdit_txtPic1").val("");
 
-            $("#ascxEdit_txtGh").focus();
+            $("#ascxEdit_txtBh").focus();
 
             $("#btnAdd").hide();
-            $("#btnImp").hide();
             $("#btnSave").show();
 
-            $("#ascxEdit_txtGh").removeAttr("readonly");
-            $("#ascxEdit_txtGh").removeClass("text-disabled");
+            $("#ascxEdit_txtBh").removeAttr("readonly");
+            $("#ascxEdit_txtBh").removeClass("text-disabled");
         }
 
         function load(id) {
@@ -271,6 +272,8 @@
             eci.post("frmMesBdZyData.aspx", "LoadRecord", { id: id }, function (res) {
                 if (res.success) {//res.全部小写
                     $("#ascxEdit_txtGUID").val(res.guid);
+                    $("#ascxEdit_txtBh").val(res.bh);
+                    $("#ascxEdit_txtZYNBM").val(res.zynbm);
                     $("#ascxEdit_txtGh").val(res.gh);
                     $("#ascxEdit_txtCode").val(res.code);
                     $("#ascxEdit_txtName").val(res.name);
@@ -311,12 +314,12 @@
                     $("#btnAdd").show();
 
                     if (res.status == "Y") {
-                        $("#ascxEdit_txtGh").attr("readonly", "true");
-                        $("#ascxEdit_txtGh").addClass("text-disabled");
+                        $("#ascxEdit_txtBh").attr("readonly", "true");
+                        $("#ascxEdit_txtBh").addClass("text-disabled");
                     }
                     else {
-                        $("#ascxEdit_txtGh").removeAttr("readonly");
-                        $("#ascxEdit_txtGh").removeClass("text-disabled");
+                        $("#ascxEdit_txtBh").removeAttr("readonly");
+                        $("#ascxEdit_txtBh").removeClass("text-disabled");
                     }
 
                     if (id == "0") {
@@ -376,6 +379,8 @@
             var data = {};//data.不区分大小写
             data.GUID = $("#ascxEdit_txtGUID").val();
             data.GH = $("#ascxEdit_txtGh").val();
+            data.BH = $("#ascxEdit_txtBh").val();
+            data.ZYNBM = $("#ascxEdit_txtZYNBM").val();
             data.NAME = $("#ascxEdit_txtName").val();
             data.CODE = $("#ascxEdit_txtCode").val();
             data.STATUS = $("#ascxEdit_cboStatus").val();
@@ -468,13 +473,13 @@
                 }
             })
         }
-        function download() {
-            window.open("../ExcelTemplate/职员.xls", "data", "data");
+        function excelDownload() {
+            eci.open("../../AppMes/ExcelTemplate/职员.xls");
         }
 
- function ZyUpload() {
+        function excelUpload() {
             var guid = eci.guid();
-            var url = "frmImpUpload.aspx" + "?Type=ZY&Guid=" + guid;
+            var url = "../../AppMes/Import/frmImportUpload.aspx" + "?Type=ZY&Guid=" + guid;
             eci.open(url);
         }
     </script>
@@ -499,8 +504,8 @@
                                 <asp:EButton runat="server" Text="新增" ID="btnAdd" Icon="add" IsClient="true" OnClientClick="append()" />
                                 <asp:EButton runat="server" Text="保存" ID="btnSave" Icon="save" IsClient="true" OnClientClick="save()" />
                                 <%--<asp:EButton runat="server" Text="删除" ID="btnDeleteIt" Icon="delete" IsClient="true" OnClientClick="deleteIt()" />--%>
-                                <asp:EButton runat="server" Text="下载模板" ID="btnDown" Icon="excel" IsClient="true" OnClientClick="download()" />
-                                <asp:EButton runat="server" Text="导入" ID="btnImp" Icon="excel" IsClient="true" OnClientClick="ZyUpload()" />
+                                <asp:EButton runat="server" Text="下载模板" ID="btnDown" Icon="excel" IsClient="true" OnClientClick="excelDownload()" />
+                                <asp:EButton runat="server" Text="导入" ID="btnImp" Icon="excel" IsClient="true" OnClientClick="excelUpload()" />
                             </div>
                         </td>
                     </tr>

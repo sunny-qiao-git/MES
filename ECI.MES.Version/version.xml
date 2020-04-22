@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<2020-4-22>
+CREATE PROCEDURE [dbo].[SP_MES_BD_ZY_IMP]
+
+ALTER TABLE MES_BD_ZY ADD BH VARCHAR(36)
+ALTER TABLE MES_BD_ZY ADD ZYNBM VARCHAR(20)
+EXECUTE sp_addextendedproperty N'MS_Description','职员编号',N'user',N'dbo',N'table',N'MES_BD_ZY',N'column',N'BH'
+EXECUTE sp_addextendedproperty N'MS_Description','职员内部名',N'user',N'dbo',N'table',N'MES_BD_ZY',N'column',N'ZYNBM'
+</2020-4-22>
