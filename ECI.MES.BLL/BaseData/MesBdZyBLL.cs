@@ -207,6 +207,10 @@ namespace ECI.MES.BLL
 
                 rowCount2++;
                 #region 必填项
+                if (dr["工号"].ToString().NullOrEmpty())
+                {
+                    errMess += "<BR>第" + rowCount + "行:工号不能为空!";
+                }
                 if (dr["职员"].ToString().NullOrEmpty())
                 {
                     errMess += "<BR>第" + rowCount + "行:职员不能为空!";
@@ -216,6 +220,8 @@ namespace ECI.MES.BLL
                 {
                     throw new AppException(errMess);
                 }
+                if (string.IsNullOrEmpty(dr["入职日期"] as string)) dr["入职日期"] = null;
+                if (string.IsNullOrEmpty(dr["离职日期"] as string)) dr["离职日期"] = null;
                 #endregion
 
                 if (zy != dr["职员"].ToString())
@@ -224,7 +230,7 @@ namespace ECI.MES.BLL
                     body = new MES_BD_ZY_STATUS();
                     body.EffectDataFields();
                     body.NAME = dr["职员"].ToString();
-                    body.RZ_DATE = dr["入职日期"].ToString().ToDate();
+                    body.RZ_DATE = dr["入职日期"].ToString().ToDateNullable();
                     body.LZ_DATE = dr["离职日期"].ToString().ToDateNullable();
                     body.SSCJ = dr["所属车间"].ToString();
                     body.SSCSCX = dr["所属生产线"].ToString();
@@ -233,17 +239,18 @@ namespace ECI.MES.BLL
                     body.SSBZ = dr["所属班组"].ToString();
                     body.GZJJGZBL = dr["工种计件工资比例"].ToString().ToDoubleNullOrEmptyToZero();
                     body.REMARK = dr["备注"].ToString();
+                    body.GH = dr["工号"].ToString();
                     body.Validate();
                     #endregion
                 }
 
             }
 
-            SqlBulkCopyByDataTable(context, "MES_BD_ZY_IMP", "MES_BD_ZY_STATUS_IMP", ds, impId);
+            SqlBulkCopyByDataTable(context, "MES_BD_ZY_IMP", "MES_BD_ZY_STATUS_IMP", dt,dt2, impId);
 
             #region 调用存储过程写入状态表
             var po = new PO("SP_MES_BD_ZY_IMP");
-            po["IMP_ID"] = impId;
+            po["P_IMP_ID"] = impId;
             po.ExecuteProcedure(context.Transaction, "");
 
             #endregion
@@ -257,7 +264,7 @@ namespace ECI.MES.BLL
         /// <param name="dataHeadTableName">表名</param>
         /// <param name="sourceDataTable">数据源</param>
         /// <param name="batchSize">一次事务插入的行数</param>
-        public void SqlBulkCopyByDataTable(BLLContext context, string dataHeadTableName,string dataBodyTableName, DataSet sourceDataSet, string impId, int batchSize = 100000)
+        public void SqlBulkCopyByDataTable(BLLContext context, string dataHeadTableName,string dataBodyTableName, DataTable sourceDataHead,DataTable sourceDataBody, string impId, int batchSize = 100000)
         {
             string connectionStr = EciServer.ConnectionString;
             using (SqlConnection Con = new SqlConnection(connectionStr))
@@ -322,7 +329,7 @@ namespace ECI.MES.BLL
                             #endregion
 
                             //DBHelper.ExecuteNoneQuery("delete from MES_BD_ZY_IMP", context.ts);
-                            sqlBulkCopyHead.WriteToServer(sourceDataSet.Tables[0]);
+                            sqlBulkCopyHead.WriteToServer(sourceDataHead);
                         }
                         catch (Exception ex)
                         {
@@ -340,14 +347,8 @@ namespace ECI.MES.BLL
                             sqlBulkBodyCopy.BatchSize = batchSize;
 
                             #region BodyColumnMappings 
-                            sqlBulkBodyCopy.DestinationTableName = dataBodyTableName;
-                            sqlBulkBodyCopy.BatchSize = batchSize;
 
-                            sqlBulkBodyCopy.ColumnMappings.Add("IMP_ID", "IMP_ID");
-                            sqlBulkBodyCopy.ColumnMappings.Add("GUID", "GUID");
-                            sqlBulkBodyCopy.ColumnMappings.Add("CREATE_USER", "CREATE_USER");
-                            sqlBulkBodyCopy.ColumnMappings.Add("CREATE_USER_NAME", "CREATE_USER_NAME");
-                            sqlBulkBodyCopy.ColumnMappings.Add("CREATE_DATE", "CREATE_DATE");
+                            sqlBulkBodyCopy.ColumnMappings.Add("工号", "GH");
                             //sqlBulkBodyCopy.ColumnMappings.Add("FGUID", "FGUID");
                             sqlBulkBodyCopy.ColumnMappings.Add("职员", "NAME");
                             sqlBulkBodyCopy.ColumnMappings.Add("入职日期", "RZ_DATE");
@@ -359,6 +360,8 @@ namespace ECI.MES.BLL
                             sqlBulkBodyCopy.ColumnMappings.Add("所属班组", "SSBZ");
                             sqlBulkBodyCopy.ColumnMappings.Add("工种计件工资比例", "GZJJGZBL");
                             sqlBulkBodyCopy.ColumnMappings.Add("备注", "REMARK");
+                            sqlBulkBodyCopy.ColumnMappings.Add("IMP_ID", "IMP_ID");
+                            sqlBulkBodyCopy.ColumnMappings.Add("GUID", "GUID");
                             sqlBulkBodyCopy.ColumnMappings.Add("CREATE_USER", "CREATE_USER");
                             sqlBulkBodyCopy.ColumnMappings.Add("CREATE_USER_NAME", "CREATE_USER_NAME");
                             sqlBulkBodyCopy.ColumnMappings.Add("CREATE_DATE", "CREATE_DATE");
@@ -366,7 +369,7 @@ namespace ECI.MES.BLL
 
                             //DBHelper.ExecuteNoneQuery("delete from MES_BD_ZY_IMP", context.ts);
                             //DBHelper.ExecuteNoneQuery("delete from MES_BD_ZY_STATUS_IMP", context.ts);
-                            sqlBulkBodyCopy.WriteToServer(sourceDataSet.Tables[1]);
+                            sqlBulkBodyCopy.WriteToServer(sourceDataBody);
                         }
                         catch (Exception ex)
                         {
@@ -374,7 +377,10 @@ namespace ECI.MES.BLL
                         }
                     }
                     #endregion
+
+                    st.Commit();
                 }
+                Con.Close();
             }
         }
     }

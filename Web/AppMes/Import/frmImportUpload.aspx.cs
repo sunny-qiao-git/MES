@@ -111,6 +111,7 @@ public partial class AppMes_Import_frmImportUpload : BasePage
     public static DataSet ExcelToDataTable(string filePath, string IsXls)
     {
         DataSet ds = new DataSet();
+        //ds.Clear();
         DataTable dt = null;
 
         #region
