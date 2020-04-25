@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[SP_MES_BD_ZY_IMP]
+﻿ALTER PROCEDURE [dbo].[SP_MES_BD_ZY_IMP]
     (
         @P_IMP_ID VARCHAR(50) --导入批次号
     )
@@ -139,6 +139,13 @@ AS
                     FROM   dbo.MES_BD_ZY_IMP
                     WHERE  IMP_ID = @V_BATCH_ID;
 
+        --将表头的工号更新到临时表体
+        UPDATE A
+        SET    A.FGUID = B.GUID
+        FROM   dbo.MES_BD_ZY_STATUS_IMP A ,
+               dbo.MES_BD_ZY_IMP B
+        WHERE  A.GH = B.GH;
+
         --写入职员表体
         INSERT INTO dbo.MES_BD_ZY_STATUS ( GUID ,
                                            FGUID ,
@@ -159,7 +166,8 @@ AS
                                            UPDATE_USER_NAME ,
                                            UPDATE_DATE ,
                                            COMPANY_CODE ,
-                                           COMPANY_NAME )
+                                           COMPANY_NAME ,
+                                           GH )
                     SELECT GUID ,             --主键
                            FGUID ,            --关键职员表头主键
                            NAME ,             --职员
@@ -179,7 +187,9 @@ AS
                            UPDATE_USER_NAME , --
                            UPDATE_DATE ,      --
                            COMPANY_CODE ,     --
-                           COMPANY_NAME
+                           COMPANY_NAME ,
+                           GH                 --工号
                     FROM   dbo.MES_BD_ZY_STATUS_IMP
                     WHERE  IMP_ID = @V_BATCH_ID;
+
     END;

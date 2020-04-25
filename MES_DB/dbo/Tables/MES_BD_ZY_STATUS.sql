@@ -19,6 +19,7 @@
     [UPDATE_DATE]      DATETIME        NULL,
     [COMPANY_CODE]     VARCHAR (50)    NULL,
     [COMPANY_NAME]     VARCHAR (200)   NULL,
+    [GH] VARCHAR(50) NULL, 
     CONSTRAINT [PK_MES_BD_ZY_STATUS] PRIMARY KEY CLUSTERED ([GUID] ASC)
 );
 
@@ -70,3 +71,10 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = '工种计件
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = '备注', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'MES_BD_ZY_STATUS', @level2type = N'COLUMN', @level2name = N'REMARK';
 
+GO
+
+
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'工号', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'MES_BD_ZY_IMP', @level2type = N'COLUMN', @level2name = N'GH';
+
+
+GO

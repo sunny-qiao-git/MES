@@ -76,6 +76,7 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'备注', @l
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'导入批次号', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'MES_BD_ZY_STATUS_IMP', @level2type = N'COLUMN', @level2name = N'IMP_ID';
 
+GO
 
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'工号', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'MES_BD_ZY_IMP', @level2type = N'COLUMN', @level2name = N'GH';
 
