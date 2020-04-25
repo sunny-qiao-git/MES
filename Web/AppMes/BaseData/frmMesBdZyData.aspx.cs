@@ -93,6 +93,8 @@ public partial class AppMes_BaseData_frmMesBdZyData : BasePage
 
         item.GUID = PageHelper.Request(MES_BD_ZY.Fields.GUID);
         item.GH = PageHelper.Request(MES_BD_ZY.Fields.GH);
+        item.BH = PageHelper.Request(MES_BD_ZY.Fields.BH);
+        item.ZYNBM = PageHelper.Request(MES_BD_ZY.Fields.ZYNBM);
         item.NAME = PageHelper.Request(MES_BD_ZY.Fields.NAME);
         item.CODE = PageHelper.Request(MES_BD_ZY.Fields.CODE);
         item.STATUS = PageHelper.Request(MES_BD_ZY.Fields.STATUS);

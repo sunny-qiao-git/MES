@@ -54,7 +54,7 @@ namespace ECI.MES.DAL
                            ,A.JS4_TEL,A.JS4_ADDRESS,A.CAR_NO,A.CAR_TYPE,A.PIC1
                            ,A.PIC1_PATH,A.PIC2,A.PIC2_PATH,A.CREATE_USER,A.CREATE_USER_NAME
                            ,A.CREATE_DATE,A.UPDATE_USER,A.UPDATE_USER_NAME,A.UPDATE_DATE,A.COMPANY_CODE
-                           ,A.COMPANY_NAME,A.PARENTID ";
+                           ,A.COMPANY_NAME,A.PARENTID,A.BH,A.ZYNBM ";
            sql +=" FROM MES_BD_ZY A WHERE 1=1 ";
             if (context.Type.Equals("GetRoot"))
             {
@@ -92,7 +92,7 @@ namespace ECI.MES.DAL
                            ,A.JS4_TEL,A.JS4_ADDRESS,A.CAR_NO,A.CAR_TYPE,A.PIC1
                            ,A.PIC1_PATH,A.PIC2,A.PIC2_PATH,A.CREATE_USER,A.CREATE_USER_NAME
                            ,A.CREATE_DATE,A.UPDATE_USER,A.UPDATE_USER_NAME,A.UPDATE_DATE,A.COMPANY_CODE
-                           ,A.COMPANY_NAME ";
+                           ,A.COMPANY_NAME,A.BH,A.ZYNBM ";
             sql +=" FROM MES_BD_ZY A ";
             sql +=" WHERE 1=1";
 

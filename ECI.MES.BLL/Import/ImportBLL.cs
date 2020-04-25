@@ -27,12 +27,12 @@ namespace ECI.MES.BLL
             instance = new ImportBLL();
         }
 
-        //单一窗口批量导入查询
+        //批量导入查询
         public SearchResult ImportSearch(BLLContext context, Paging paging, EntityBase queryEntity, string bizType, string bizNo)
         {
             return dal.ImportSearch(context, paging, queryEntity, bizType, bizNo);
         }
-        //单一窗口批量导入查询后删除数据
+        //批量导入查询后删除数据
         public void ImportDelete(BLLContext context, List<string> listGuid)
         {
             foreach (string guid in listGuid)

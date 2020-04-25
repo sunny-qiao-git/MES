@@ -12,33 +12,41 @@
     </tr>
 
     <tr>
+        <td class="lbl">职员编号</td>
+        <td>
+            <asp:ETextBox runat="server" ID="txtBh" DataField="BH" NotNull="true" Width="85%"></asp:ETextBox></td>
         <td class="lbl">工号</td>
         <td>
             <asp:ETextBox runat="server" ID="txtGh" DataField="GH" NotNull="true" Width="85%"></asp:ETextBox></td>
+        <td class="lbl">职员内部名</td>
+        <td>
+            <asp:ETextBox runat="server" ID="txtZYNBM" NotNull="true" DataField="ZYNBM" Width="85%"></asp:ETextBox></td>
+    </tr>
+    <tr>
         <td class="lbl">职员代码</td>
         <td>
             <asp:ETextBox runat="server" ID="txtCode" DataField="CODE" Width="85%"></asp:ETextBox></td>
         <td class="lbl">职员名</td>
         <td>
             <asp:ETextBox runat="server" ID="txtName" DataField="NAME" Width="85%"></asp:ETextBox></td>
-
-    </tr>
-    <tr>
         <td class="lbl">职员状态</td>
         <td>
             <asp:ECombox runat="server" ID="cboStatus" DataField="STATUS" AddEmpty="true" ECIType="ZY_STATUS" Width="85%"></asp:ECombox></td>
+
+    </tr>
+    <tr>
         <td class="lbl">移动电话</td>
         <td>
             <asp:ETextBox runat="server" ID="txtTel" DataField="TEL" Width="85%"></asp:ETextBox></td>
         <td class="lbl">身份证号码</td>
         <td>
             <asp:ETextBox runat="server" ID="txtIdCard" DataField="ID_CARD" Width="85%"></asp:ETextBox></td>
-
-    </tr>
-    <tr>
         <td class="lbl">开户银行</td>
         <td>
             <asp:ETextBox runat="server" ID="txtKhyh" DataField="KHYH" Width="85%"></asp:ETextBox></td>
+
+    </tr>
+    <tr>
         <td class="lbl">开户名</td>
         <td>
             <asp:ETextBox runat="server" ID="txtKhm" DataField="KHM" Width="85%"></asp:ETextBox></td>
@@ -46,11 +54,11 @@
         <td class="lbl">银行账号</td>
         <td>
             <asp:ETextBox runat="server" ID="txtBank" DataField="BANK" Width="85%"></asp:ETextBox></td>
-    </tr>
-    <tr>
         <td class="lbl">文化程度</td>
         <td>
             <asp:ETextBox runat="server" ID="txtWhcd" DataField="WHCD" Width="85%"></asp:ETextBox></td>
+    </tr>
+    <tr>
         <td class="lbl">毕业学校</td>
         <td>
             <asp:ETextBox runat="server" ID="txtByxx" DataField="BYXX" Width="85%"></asp:ETextBox></td>
@@ -59,11 +67,11 @@
         <td class="lbl">毕业专业</td>
         <td>
             <asp:ETextBox runat="server" ID="txtByzy" DataField="BYZY" Width="85%"></asp:ETextBox></td>
-    </tr>
-    <tr>
         <td class="lbl">毕业年份</td>
         <td>
             <asp:ETextBox runat="server" ID="txtBynf" DataField="BYNF" Width="85%"></asp:ETextBox></td>
+    </tr>
+    <tr>
 
         <td class="lbl">省份</td>
         <td>
@@ -72,18 +80,18 @@
         <td class="lbl">城市</td>
         <td>
             <asp:EChoose runat="server" ID="txtCity" DataField="CITY" ECIType="CITY" Width="85%"></asp:EChoose></td>
-    </tr>
-    <tr>
         <td class="lbl">住址</td>
         <td>
             <asp:ETextBox runat="server" ID="txtAddress" DataField="ADDRESS" Width="85%"></asp:ETextBox></td>
+    </tr>
+    <tr>
         <td class="lbl">电子邮件</td>
         <td>
             <asp:ETextBox runat="server" ID="txtMail" DataField="MAIL" Width="85%"></asp:ETextBox></td>
 
         <td class="lbl">备注</td>
-        <td>
-            <asp:ETextBox runat="server" ID="txtRemark" DataField="REMARK" Width="85%"></asp:ETextBox></td>
+        <td colspan="3">
+            <asp:ETextBox runat="server" ID="txtRemark" DataField="REMARK" Width="95%"></asp:ETextBox></td>
     </tr>
     <tr>
         <td class="lbl">家属1</td>

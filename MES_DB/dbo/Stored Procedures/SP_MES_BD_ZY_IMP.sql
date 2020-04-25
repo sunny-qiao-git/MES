@@ -12,18 +12,18 @@ AS
         DELETE dbo.MES_BD_ZY_STATUS
         WHERE  FGUID IN (   SELECT GUID
                             FROM   dbo.MES_BD_ZY
-                            WHERE  GH IN (   SELECT GH
+                            WHERE  BH IN (   SELECT BH
                                              FROM   MES_BD_ZY_IMP
                                              WHERE  IMP_ID = @V_BATCH_ID ));
         DELETE MES_BD_ZY
-        WHERE  GH IN (   SELECT GH
+        WHERE  BH IN (   SELECT BH
                          FROM   MES_BD_ZY_IMP
                          WHERE  IMP_ID = @V_BATCH_ID );
 
 
         --写入人员表头
         INSERT INTO dbo.MES_BD_ZY ( GUID ,
-                                    GH ,
+                                    BH ,
                                     CODE ,
                                     NAME ,
                                     STATUS ,
@@ -80,7 +80,7 @@ AS
                                     COMPANY_NAME ,
                                     PARENTID )
                     SELECT GUID ,             --主键
-                           GH ,               --工号
+                           BH ,               --工号
                            CODE ,             --职员代码
                            NAME ,             --职员名
                            STATUS ,           --职员状态

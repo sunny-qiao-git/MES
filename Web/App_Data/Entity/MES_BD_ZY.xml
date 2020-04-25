@@ -353,7 +353,7 @@
   </COLUMN>
    <COLUMN>
       <FIELD>PIC1</FIELD>
-      <NAME>照片1</NAME>
+      <NAME>职员缩略图</NAME>
       <TYPE>TEXT</TYPE>
       <LENGTH>200</LENGTH>
       <NOTNULL>N</NOTNULL>
@@ -361,7 +361,7 @@
   </COLUMN>
    <COLUMN>
       <FIELD>PIC1_PATH</FIELD>
-      <NAME>照片1路径</NAME>
+      <NAME>职员缩略图路径</NAME>
       <TYPE>TEXT</TYPE>
       <LENGTH>-1</LENGTH>
       <NOTNULL>N</NOTNULL>
@@ -444,6 +444,30 @@
       <NAME></NAME>
       <TYPE>TEXT</TYPE>
       <LENGTH>200</LENGTH>
+      <NOTNULL>N</NOTNULL>
+      <STATUS>1</STATUS>
+  </COLUMN>
+   <COLUMN>
+      <FIELD>PARENTID</FIELD>
+      <NAME></NAME>
+      <TYPE>TEXT</TYPE>
+      <LENGTH>36</LENGTH>
+      <NOTNULL>N</NOTNULL>
+      <STATUS>1</STATUS>
+  </COLUMN>
+   <COLUMN>
+      <FIELD>BH</FIELD>
+      <NAME>职员编号</NAME>
+      <TYPE>TEXT</TYPE>
+      <LENGTH>36</LENGTH>
+      <NOTNULL>N</NOTNULL>
+      <STATUS>1</STATUS>
+  </COLUMN>
+   <COLUMN>
+      <FIELD>ZYNBM</FIELD>
+      <NAME>职员内部名</NAME>
+      <TYPE>TEXT</TYPE>
+      <LENGTH>20</LENGTH>
       <NOTNULL>N</NOTNULL>
       <STATUS>1</STATUS>
   </COLUMN>
