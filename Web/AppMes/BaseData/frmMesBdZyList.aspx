@@ -472,9 +472,9 @@
             window.open("../ExcelTemplate/职员.xls", "data", "data");
         }
 
- function ZyUpload() {
+        function ZyUpload() {
             var guid = eci.guid();
-            var url = "frmImpUpload.aspx" + "?Type=ZY&Guid=" + guid;
+            var url = "../Import/frmImportUpload.aspx" + "?Type=ZYDR&Guid=" + guid;
             eci.open(url);
         }
     </script>

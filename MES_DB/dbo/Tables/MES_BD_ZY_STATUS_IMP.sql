@@ -11,15 +11,16 @@
     [SSBZ]             VARCHAR (30)    NULL,
     [GZJJGZBL]         NUMERIC (19, 2) DEFAULT ((1)) NULL,
     [REMARK]           VARCHAR (300)   NULL,
-    [CREATE_USER]      VARCHAR (20)    NULL,
+    [CREATE_USER]      VARCHAR (50)    NULL,
     [CREATE_USER_NAME] VARCHAR (50)    NULL,
     [CREATE_DATE]      DATETIME        NULL,
-    [UPDATE_USER]      VARCHAR (20)    NULL,
+    [UPDATE_USER]      VARCHAR (50)    NULL,
     [UPDATE_USER_NAME] VARCHAR (50)    NULL,
     [UPDATE_DATE]      DATETIME        NULL,
     [COMPANY_CODE]     VARCHAR (50)    NULL,
     [COMPANY_NAME]     VARCHAR (200)   NULL,
     [IMP_ID]           VARCHAR (50)    NULL,
+    [GH] VARCHAR(50) NULL, 
     CONSTRAINT [PK_MES_BD_ZY_STATUS_copy1] PRIMARY KEY CLUSTERED ([GUID] ASC)
 );
 
@@ -75,3 +76,8 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'备注', @l
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'导入批次号', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'MES_BD_ZY_STATUS_IMP', @level2type = N'COLUMN', @level2name = N'IMP_ID';
 
+
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'工号', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'MES_BD_ZY_IMP', @level2type = N'COLUMN', @level2name = N'GH';
+
+
+GO

@@ -17,7 +17,7 @@ namespace ECI.MES.SO
             EntityBase saveEntity = context.Request.Entity;
             bool isAdd = context.Request.IsAdd;
 
-            MesBdZyBLL.Instance.MesBdZyImport(context.BLLContext, saveEntity, context.Request.DataSet.Tables[0]);
+            MesBdZyBLL.Instance.MesBdZyImport(context.BLLContext, saveEntity, context.Request.DataSet);
 
             context.Response.Message = "导入成功";
 
