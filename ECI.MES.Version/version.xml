@@ -37,3 +37,8 @@ GO
   
 ALTER PROCEDURE [dbo].[SP_MES_BD_ZY_IMP]
   </2020-4-26>
+<2020-05-02>
+  1、增加数据库脚本文件夹Helpdbo（其中help.sql为春结构完整库脚本，helpData.sql是完整库和样例数据脚本）
+  2、增加Table文件夹下Help开头的7个表；
+  3、增加Function文件夹下[F_ECI_GET_NO]的存储过程
+</2020-05-02>
