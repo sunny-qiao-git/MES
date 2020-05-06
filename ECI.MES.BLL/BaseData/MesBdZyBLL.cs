@@ -89,7 +89,7 @@ namespace ECI.MES.BLL
         #region 电子导入
         public void MesBdZyImport(BLLContext context, EntityBase saveEntity, DataSet ds)
         {
-            string errMess = "", gh = "",zy="";
+            string errMess = "", bh = "",zy="";
             int rowCount = 1,rowCount2 = 1; ;
             MES_BD_ZY head = null;
             MES_BD_ZY_STATUS body = null;
@@ -118,6 +118,10 @@ namespace ECI.MES.BLL
                 rowCount++;
                 
                 #region 必填项
+                if (dr["职员编号"].ToString().NullOrEmpty())
+                {
+                    errMess += "<BR>第" + rowCount + "行:职员编号不能为空!";
+                }
                 if (dr["工号"].ToString().NullOrEmpty())
                 {
                     errMess += "<BR>第" + rowCount + "行:工号不能为空!";
@@ -137,14 +141,17 @@ namespace ECI.MES.BLL
                 }
                 #endregion
 
-                if (gh != dr["工号"].ToString())
+                if (bh != dr["职员编号"].ToString())
                 {
                     #region 表头
-                    gh = dr["工号"].ToString();
+                    bh = dr["职员编号"].ToString();
 
                     head = new MES_BD_ZY();
                     head.EffectDataFields();
-                    head.GH = gh;
+                    head.BH = bh;
+                    head.PARENTID = dr["上级职员编号"].ToString();
+                    head.GH = dr["工号"].ToString();
+                    head.ZYNBM = dr["职员内部名"].ToString();
                     head.CODE = dr["职员代码"].ToString();
                     head.NAME = dr["职员名"].ToString();
                     head.STATUS = dr["职员状态"].ToString();
@@ -183,6 +190,7 @@ namespace ECI.MES.BLL
                     head.CAR_TYPE = dr["车辆类型"].ToString();
 
                     head.Validate();
+                    val.SaveValidate(null, head, true);
                     #endregion
                 }
 
@@ -207,14 +215,14 @@ namespace ECI.MES.BLL
 
                 rowCount2++;
                 #region 必填项
-                if (dr["工号"].ToString().NullOrEmpty())
+                if (dr["职员编号"].ToString().NullOrEmpty())
                 {
-                    errMess += "<BR>第" + rowCount + "行:工号不能为空!";
+                    errMess += "<BR>第" + rowCount + "行:职员编号不能为空!";
                 }
-                if (dr["职员"].ToString().NullOrEmpty())
-                {
-                    errMess += "<BR>第" + rowCount + "行:职员不能为空!";
-                }
+                //if (dr["职员"].ToString().NullOrEmpty())
+                //{
+                //    errMess += "<BR>第" + rowCount + "行:职员不能为空!";
+                //}
 
                 if (!errMess.NullOrEmpty())
                 {
@@ -224,11 +232,12 @@ namespace ECI.MES.BLL
                 if (string.IsNullOrEmpty(dr["离职日期"] as string)) dr["离职日期"] = null;
                 #endregion
 
-                if (zy != dr["职员"].ToString())
+                if (zy != dr["职员编号"].ToString())
                 {
                     #region 表体
                     body = new MES_BD_ZY_STATUS();
                     body.EffectDataFields();
+                    body.BH = dr["职员编号"].ToString();
                     body.NAME = dr["职员"].ToString();
                     body.RZ_DATE = dr["入职日期"].ToString().ToDateNullable();
                     body.LZ_DATE = dr["离职日期"].ToString().ToDateNullable();
@@ -239,7 +248,6 @@ namespace ECI.MES.BLL
                     body.SSBZ = dr["所属班组"].ToString();
                     body.GZJJGZBL = dr["工种计件工资比例"].ToString().ToDoubleNullOrEmptyToZero();
                     body.REMARK = dr["备注"].ToString();
-                    body.GH = dr["工号"].ToString();
                     body.Validate();
                     #endregion
                 }
@@ -288,7 +296,10 @@ namespace ECI.MES.BLL
                             sqlBulkCopyHead.ColumnMappings.Add("CREATE_USER_NAME", "CREATE_USER_NAME");
                             sqlBulkCopyHead.ColumnMappings.Add("CREATE_DATE", "CREATE_DATE");
 
+                            sqlBulkCopyHead.ColumnMappings.Add("职员编号", "BH");
+                            sqlBulkCopyHead.ColumnMappings.Add("上级职员编号", "PARENTID");
                             sqlBulkCopyHead.ColumnMappings.Add("工号", "GH");
+                            sqlBulkCopyHead.ColumnMappings.Add("职员内部名", "ZYNBM");
                             sqlBulkCopyHead.ColumnMappings.Add("职员代码", "CODE");
                             sqlBulkCopyHead.ColumnMappings.Add("职员名", "NAME");
                             sqlBulkCopyHead.ColumnMappings.Add("职员状态", "STATUS");
@@ -348,7 +359,8 @@ namespace ECI.MES.BLL
 
                             #region BodyColumnMappings 
 
-                            sqlBulkBodyCopy.ColumnMappings.Add("工号", "GH");
+                            sqlBulkBodyCopy.ColumnMappings.Add("职员编号", "BH");
+                            //sqlBulkBodyCopy.ColumnMappings.Add("工号", "GH");
                             //sqlBulkBodyCopy.ColumnMappings.Add("FGUID", "FGUID");
                             sqlBulkBodyCopy.ColumnMappings.Add("职员", "NAME");
                             sqlBulkBodyCopy.ColumnMappings.Add("入职日期", "RZ_DATE");

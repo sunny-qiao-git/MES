@@ -57,7 +57,7 @@ public partial class AppMes_Import_frmImportUpload : BasePage
     protected DataTable GetFileInfoData()
     {
         EciRequest request = new EciRequest(MESService.ImportSearch);
-        request["BIZ_TYPE"] = "ZYDR";
+        request["BIZ_TYPE"] = "ZY";
         request["BIZ_NO"] = Guid;
 
         EciResponse response = SOA.Execute(request);

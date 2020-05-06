@@ -207,7 +207,7 @@
 
         }
         function add(parentId) {
-            //$("#divEdit").show();
+            $("#divEdit").show();
             var guid = eci.guid();
 
             $("#ascxEdit_txtGUID").val(guid);
@@ -324,9 +324,11 @@
 
                     if (id == "0") {
                         $("#btnSave").hide();
+                        $("#divEdit").hide();
                     }
                     else {
                         $("#btnSave").show();
+                        $("#divEdit").show();
                     }
                 }
                 else {
@@ -518,16 +520,19 @@
                         </td>
                         <td class="function-edit" style="vertical-align: top;">
                             <div style="padding: 1px 0px 0px 1px; margin: 0px; border-bottom: 1px solid #95B8E7; border-right: 1px solid #95B8E7; overflow-y: auto; vertical-align: top;">
-                                <div class="pagetitle">职员</div>
-                                <uc1:ascxEdit runat="server" ID="ascxEdit" />
-                                <div style="margin: 2px;"></div>
-                            </div>
-                            <div style="border-right: 1px solid #95B8E7;" class="fitH" layout="148">
-                                <iframe runat="server" id="tabStatus" width="100%" height="100%"></iframe>
-                                <%--<asp:ETab runat="server" ID="tabZy" ActiveTabIndex="0">
+                                <asp:EPanel ID="divEdit" Title="职员" runat="server" EnableToggle="false">
+                                    <%--<div class="pagetitle"></div>--%>
+                                    <uc1:ascxEdit runat="server" ID="ascxEdit" />
+                                    <div style="margin: 2px;"></div>
+
+                                    <div style="border-right: 1px solid #95B8E7;" class="fitH" layout="148">
+                                        <iframe runat="server" id="tabStatus" width="100%" height="100%"></iframe>
+                                        <%--<asp:ETab runat="server" ID="tabZy" ActiveTabIndex="0">
                                     <asp:ETabItem runat="server" ID="tabStatus" Title="职员工种及状态" Frame="true"></asp:ETabItem>
                                     <asp:ETabItem runat="server" ID="tabDoc" Title="文件录入" Frame="true"></asp:ETabItem>
                                 </asp:ETab>--%>
+                                    </div>
+                                </asp:EPanel>
                             </div>
                         </td>
                     </tr>

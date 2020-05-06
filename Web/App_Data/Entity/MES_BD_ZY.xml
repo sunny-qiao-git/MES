@@ -387,7 +387,7 @@
       <FIELD>CREATE_USER</FIELD>
       <NAME></NAME>
       <TYPE>TEXT</TYPE>
-      <LENGTH>20</LENGTH>
+      <LENGTH>50</LENGTH>
       <NOTNULL>N</NOTNULL>
       <STATUS>1</STATUS>
   </COLUMN>
@@ -411,7 +411,7 @@
       <FIELD>UPDATE_USER</FIELD>
       <NAME></NAME>
       <TYPE>TEXT</TYPE>
-      <LENGTH>20</LENGTH>
+      <LENGTH>50</LENGTH>
       <NOTNULL>N</NOTNULL>
       <STATUS>1</STATUS>
   </COLUMN>

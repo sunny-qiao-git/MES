@@ -39,6 +39,7 @@ public partial class AppMes_BaseData_frmMesBdZyStatusList : QueryPage
  
         request.Entity = new EntityBase();
         request.Entity.GetBindingData();
+        request.Entity.AddCommonQuerySetting("FGUID", "A.FGUID|strig|=", this.fguid);
     }
 
     protected void btnDelete_Click(object sender, EventArgs e)

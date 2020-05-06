@@ -8,7 +8,7 @@ AS
 
         SET @V_BATCH_ID = @P_IMP_ID;
 
-        --根据工号将已有删除
+        --根据内部编号将已有删除
         DELETE dbo.MES_BD_ZY_STATUS
         WHERE  FGUID IN (   SELECT GUID
                             FROM   dbo.MES_BD_ZY
@@ -23,7 +23,7 @@ AS
 
         --写入人员表头
         INSERT INTO dbo.MES_BD_ZY ( GUID ,
-                                    BH ,
+                                    BH ,GH,ZYNBM,
                                     CODE ,
                                     NAME ,
                                     STATUS ,
@@ -80,7 +80,9 @@ AS
                                     COMPANY_NAME ,
                                     PARENTID )
                     SELECT GUID ,             --主键
-                           BH ,               --工号
+                           BH ,               --内部编号
+						   GH,--工号
+						   ZYNBM,--内部职员姓名
                            CODE ,             --职员代码
                            NAME ,             --职员名
                            STATUS ,           --职员状态
@@ -139,12 +141,25 @@ AS
                     FROM   dbo.MES_BD_ZY_IMP
                     WHERE  IMP_ID = @V_BATCH_ID;
 
-        --将表头的工号更新到临时表体
+	   --更新职员的parentid
+	   UPDATE A
+	   SET A.PARENTID=B.GUID
+	   FROM MES_BD_ZY A,MES_BD_ZY B 
+	   WHERE A.PARENTID=B.BH AND ISNULL(A.PARENTID,'')!='' AND
+	   EXISTS(SELECT 1 FROM MES_BD_ZY_IMP X WHERE A.BH=X.BH AND X.IMP_ID=@V_BATCH_ID)
+
+	   UPDATE A
+	   SET A.PARENTID='0'
+	   FROM MES_BD_ZY A
+	   WHERE ISNULL(A.PARENTID,'')='' AND
+	   EXISTS(SELECT 1 FROM MES_BD_ZY_IMP X WHERE A.BH=X.BH AND X.IMP_ID=@V_BATCH_ID)
+
+        --将表头的内部编号更新到临时表体
         UPDATE A
         SET    A.FGUID = B.GUID
         FROM   dbo.MES_BD_ZY_STATUS_IMP A ,
                dbo.MES_BD_ZY_IMP B
-        WHERE  A.GH = B.GH;
+        WHERE  A.BH = B.BH;
 
         --写入职员表体
         INSERT INTO dbo.MES_BD_ZY_STATUS ( GUID ,
@@ -167,7 +182,7 @@ AS
                                            UPDATE_DATE ,
                                            COMPANY_CODE ,
                                            COMPANY_NAME ,
-                                           GH )
+                                           GH,BH )
                     SELECT GUID ,             --主键
                            FGUID ,            --关键职员表头主键
                            NAME ,             --职员
@@ -188,7 +203,8 @@ AS
                            UPDATE_DATE ,      --
                            COMPANY_CODE ,     --
                            COMPANY_NAME ,
-                           GH                 --工号
+						   GH,--工号
+                           BH                 --内部编号
                     FROM   dbo.MES_BD_ZY_STATUS_IMP
                     WHERE  IMP_ID = @V_BATCH_ID;
 
