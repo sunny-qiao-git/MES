@@ -63,7 +63,6 @@
     <Folder Include="dbo\Views\" />
     <Folder Include="dbo\Functions\" />
     <Folder Include="dbo\Stored Procedures\" />
-    <Folder Include="dbo\HELPTable" />
     <Folder Include="Helpdbo" />
   </ItemGroup>
   <ItemGroup>
