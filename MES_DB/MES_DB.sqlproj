@@ -63,6 +63,7 @@
     <Folder Include="dbo\Views\" />
     <Folder Include="dbo\Functions\" />
     <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Helpdbo" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\MES_BD_ZY.sql" />
@@ -198,5 +199,15 @@
     <Build Include="dbo\Functions\GETCOLNAME3.sql" />
     <Build Include="dbo\Stored Procedures\SP_MES_BD_ZY_IMP.sql" />
     <Build Include="dbo\Stored Procedures\F_ECI_GET_NO.sql" />
+    <Build Include="Helpdbo\help.sql" />
+    <Build Include="Helpdbo\helpData.sql" />
+    <Build Include="dbo\Tables\HELP_CATALOG.sql" />
+    <Build Include="dbo\Tables\HELP_FEEDBACK.sql" />
+    <Build Include="dbo\Tables\HELP_INFO.sql" />
+    <Build Include="dbo\Tables\HELP_INFO_HISTORY.sql" />
+    <Build Include="dbo\Tables\HELP_MAPPING.sql" />
+    <Build Include="dbo\Tables\HELP_READ.sql" />
+    <Build Include="dbo\Tables\HELP_TIP_INFO.sql" />
+    <Build Include="dbo\Functions\F_ECI_GET_NO.sql" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FunctionList>
+	<Function>
+		<Type>1</Type>
+		<ID>ab8e38c28e6c17e7fdc93f2185013930</ID>
+		<Name>操作提示</Name>
+		<Code>ab8e38c28e6c17e7fdc93f2185013930</Code>
+		<Sequence>30</Sequence>
+		<ShowInMenu>1</ShowInMenu>
+		<ParentID>173268f30f34d860dfae64236580faa6</ParentID>
+		<CreateUser>fcf544424c324fdc97dfd59ceae82736</CreateUser>
+		<CreateTime>2020/5/5 21:39:29</CreateTime>
+		<LastModifyUser>fcf544424c324fdc97dfd59ceae82736</LastModifyUser>
+		<LastModifyTime>2020/5/5 21:39:44</LastModifyTime>
+	</Function>
+	<Function>
+		<Type>1</Type>
+		<ID>32cb2896057f7acd2f4e48546ecf6c24</ID>
+		<Name>操作提示维护</Name>
+		<Code>32cb2896057f7acd2f4e48546ecf6c24</Code>
+		<Url>AppMes/HelpTip/frmHelpTepList.aspx</Url>
+		<Sequence>10</Sequence>
+		<ShowInMenu>1</ShowInMenu>
+		<ParentID>ab8e38c28e6c17e7fdc93f2185013930</ParentID>
+		<CreateUser>fcf544424c324fdc97dfd59ceae82736</CreateUser>
+		<CreateTime>2020/5/5 21:40:00</CreateTime>
+		<LastModifyUser>fcf544424c324fdc97dfd59ceae82736</LastModifyUser>
+		<LastModifyTime>2020/5/5 22:05:13</LastModifyTime>
+	</Function>
+	<Function>
+		<Type>1</Type>
+		<ID>7c03d66e4be9520195053f63f6233b05</ID>
+		<Name>系统目录维护</Name>
+		<Code>7c03d66e4be9520195053f63f6233b05</Code>
+		<Sequence>20</Sequence>
+		<ShowInMenu>1</ShowInMenu>
+		<ParentID>ab8e38c28e6c17e7fdc93f2185013930</ParentID>
+		<CreateUser>fcf544424c324fdc97dfd59ceae82736</CreateUser>
+		<CreateTime>2020/5/5 22:05:30</CreateTime>
+	</Function>
+	<Function>
+		<Type>1</Type>
+		<ID>e4e7d80cd1515e2f4da4290c148cebe6</ID>
+		<Name>操作提示检索</Name>
+		<Code>e4e7d80cd1515e2f4da4290c148cebe6</Code>
+		<Sequence>30</Sequence>
+		<ShowInMenu>1</ShowInMenu>
+		<ParentID>ab8e38c28e6c17e7fdc93f2185013930</ParentID>
+		<CreateUser>fcf544424c324fdc97dfd59ceae82736</CreateUser>
+		<CreateTime>2020/5/5 22:05:47</CreateTime>
+	</Function>
+</FunctionList>
