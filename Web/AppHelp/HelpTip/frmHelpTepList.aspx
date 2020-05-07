@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="frmHelpTepList.aspx.cs" Inherits="AppMes_HelpTip_frmHelpTepList" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="frmHelpTepList.aspx.cs" Inherits="AppHelp_HelpTip_frmHelpTepList" %>
 
 <!DOCTYPE html>
 

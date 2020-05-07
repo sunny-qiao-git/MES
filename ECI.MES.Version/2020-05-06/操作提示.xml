@@ -18,7 +18,7 @@
 		<ID>32cb2896057f7acd2f4e48546ecf6c24</ID>
 		<Name>操作提示维护</Name>
 		<Code>32cb2896057f7acd2f4e48546ecf6c24</Code>
-		<Url>AppMes/HelpTip/frmHelpTepList.aspx</Url>
+		<Url>AppHelp/HelpTip/frmHelpTepList.aspx</Url>
 		<Sequence>10</Sequence>
 		<ShowInMenu>1</ShowInMenu>
 		<ParentID>ab8e38c28e6c17e7fdc93f2185013930</ParentID>

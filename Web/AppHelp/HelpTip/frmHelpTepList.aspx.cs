@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class AppMes_HelpTip_frmHelpTepList : QueryPage
+public partial class AppHelp_HelpTip_frmHelpTepList : QueryPage
 {
     private string catelogid
     {

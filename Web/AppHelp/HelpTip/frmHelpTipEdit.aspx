@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="frmHelpTipEdit.aspx.cs" Inherits="AppMes_HelpTip_frmHelpTipEdit" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="frmHelpTipEdit.aspx.cs" Inherits="AppHelp_HelpTip_frmHelpTipEdit" %>
 
 <!DOCTYPE html>
 
@@ -42,7 +42,7 @@
                         <td class="function-edit" style="vertical-align: top;">
                             <div style="padding: 1px 0px 0px 1px; margin: 0px; border-bottom: 1px solid #95B8E7; border-right: 1px solid #95B8E7; overflow-y: auto; vertical-align: top;">
                                 <div class="pagetitle">职员</div>
-                                <uc1:ascxEdit runat="server" ID="ascxEdit" />
+                                <%--<uc1:ascxEdit runat="server" ID="ascxEdit" />--%>
                                 <div style="margin: 2px;"></div>
                             </div>
                             <div style="border-right: 1px solid #95B8E7;" class="fitH" layout="148">
